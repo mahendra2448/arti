@@ -1,216 +1,111 @@
-@extends('frontend.layouts.app-arti')
-@section('title',appName())
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ appName() }}</title>
+        <meta name="description" content="@yield('meta_description', appName())">
+        <meta name="author" content="@yield('meta_author', 'Anthony Rappa')">
+        @yield('meta')
 
-@section('content')
-    <main id="content">
-        <div id="carousel-arti" class="carousel slide carousel-fade" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="section header" style="background-image: linear-gradient(black, black), url('{{url('img/bg/homepic.webp')}}')">
-                        <div class="container small-device-home position-relative">
-                            <div class="d-block heading-text">
-                                <div class="heading">
-                                    <span>Yayasan ARTI</span>
-                                </div>
-                                <div class="sub-heading mb-5">
-                                    <span>Helping others striving for the best</span>
-                                </div>
-                                <a href="about" class="text-decoration-none btn-primary">About Us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="section header" style="background-image: linear-gradient(black, black), url('{{url('img/bg/home1.jpg')}}')">
-                        <div class="container small-device-home position-relative">
-                            <div class="d-block heading-text">
-                                <div class="heading">
-                                    <span>Yayasan ARTI</span>
-                                </div>
-                                <div class="sub-heading mb-5">
-                                    <span>Helping others striving for the best</span>
-                                </div>
-                                <a href="about" class="text-decoration-none btn-primary">About Us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="section header" style="background-image: linear-gradient(black, black), url('{{url('img/bg/home2.jpg')}}')">
-                        <div class="container small-device-home position-relative">
-                            <div class="d-block heading-text">
-                                <div class="heading">
-                                    <span>Yayasan ARTI</span>
-                                </div>
-                                <div class="sub-heading mb-5">
-                                    <span>Helping others striving for the best</span>
-                                </div>
-                                <a href="about" class="text-decoration-none btn-primary">About Us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @stack('before-styles')
+        <link rel="dns-prefetch" href="//fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="{{ mix('css/frontend.css') }}" rel="stylesheet">
+        <style>
+            html, body {
+                background-color: #fff;
+                color: #636b6f;
+                font-family: 'Nunito', sans-serif;
+                font-weight: 200;
+                height: 100vh;
+                margin: 0;
+            }
 
-        <div class="section desc">
-            <div class="orn-left"></div>
-            <div class="orn-right"></div>
-            <div class="container">
-                <div class="row about">
-                    <div class="col-md-7 d-flex align-items-center">
-                        <p><strong>YAYASAN ARTI</strong> adalah sebuah organisasi non-profit yang berdiri sejak tahun 2001. ARTI lahir dari kepedulian para akademis, pendidik, pegiat hak anak, dan aktivis sosial untuk menciptakan kepedulian masyarakat Indonesia terhadap <strong>hak-hak dan kesejahteraan anak, serta penghormatan terhadap martabat manusia</strong>.</p>
-                    </div>
-                    <div class="col-md-5">
-                        <div class="img-desc"></div>
-                    </div>
-                </div>
-                <div class="row about two">
-                    <div class="col-12 desc">
-                        <p>
-                            ARTI memiliki fokus untuk melakukan <strong>penelitian aksi</strong> dan <strong>pengembangan kapasitas</strong>, yang berfokus pada pendekatan partisipatoris sebagai metode yang digunakan.
-                        </p>
-                    </div>
-                    <div class="col-md-6 research">
-                        <div class="ic"></div>
-                        <span class="title">Penelitian</span>
-                    </div>
-                    <div class="col-md-6 training">
-                        <div class="ic"></div>
-                        <span class="title">Edukasi &<br>Pelatihan</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+            .full-height {
+                height: 100vh;
+            }
 
-        <div class="experiences">
-            <h1>Our Experiences</h1>
-            <div class="row row-cols-sm-1 row-cols-md-3 exp-thumbs">
-                <figure class="effect-jazz blue">
-                    <img src="{{url('img/exp/exp1.webp')}}" alt="exp1">
-                    <figcaption>
-                        <h2 class="m-auto">
-                            Mental Health <br> First Aid
-                        </h2>
-                    </figcaption>			
-                </figure>
-                <figure class="effect-jazz red">
-                    <img src="{{url('img/exp/exp2.webp')}}" alt="exp2">
-                    <figcaption>
-                        <h2 class="m-auto">
-                            Training <br> of Trainers
-                        </h2>
-                    </figcaption>			
-                </figure>
-                <figure class="effect-jazz blue">
-                    <img src="{{url('img/exp/exp3.webp')}}" alt="exp3">
-                    <figcaption>
-                        <h2 class="m-auto">
-                            Module <br>Development
-                        </h2>
-                    </figcaption>			
-                </figure>
-            </div>
-            <div class="row row-cols-sm-1 row-cols-md-3 exp-thumbs">
-                <figure class="effect-jazz red">
-                    <img src="{{url('img/exp/exp4.webp')}}" alt="exp4">
-                    <figcaption>
-                        <h2 class="m-auto">
-                        Mental Health & <br> Psychosocial Support
-                        </h2>
-                    </figcaption>			
-                </figure>
-                <figure class="effect-jazz blue">
-                    <img src="{{url('img/exp/exp5.webp')}}" alt="exp5">
-                    <figcaption>
-                        <h2 class="m-auto">
-                            Action <br> Research
-                        </h2>
-                    </figcaption>			
-                </figure>
-                <figure class="effect-jazz red">
-                    <img src="{{url('img/exp/exp6.webp')}}" alt="exp6">
-                    <figcaption>
-                        <h2 class="m-auto">
-                            Capacity <br> Building
-                        </h2>
-                    </figcaption>			
-                </figure>
-            </div>
-        </div>
+            .flex-center {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
 
-        <div class="testi">
-            <h1>What They Say</h1>
-            <div class="container">
-                <div class="testi-wrapper">
-                    <div class="quotes open"></div>
-                    <div class="quotes close"></div>
-                    <div class="testi-slide m-auto">
-                        <div class="testi-text">
-                            <p>Dengan mengikuti collaborative learning mengenai kesehatan mental dengan Yayasan ARTI, saya jadi memahami kalau kesehatan secara teori merupakan hal yang kompleks. Dalam sesi collaborative learning ini Yayasan ARTI tidak hanya membawakan teori, tetapi juga kasus-kasus di kehidupan nyata yang sangat menarik dan menyentuh.</p>
+            .position-ref {
+                position: relative;
+            }
 
-                            <div class="testee">
-                                <h6><strong>Bani Risset</strong></h6>
-                                <span>IT & Public Communication, <br>Indonesia AIDS Coalition (IAC)</span>
-                            </div>
-                        </div>
-                        <div class="testi-text">
-                            <p>Dengan mengikuti collaborative learning mengenai kesehatan mental dengan Yayasan ARTI, saya jadi memahami kalau kesehatan secara teori merupakan hal yang kompleks. Dalam sesi collaborative learning ini Yayasan ARTI tidak hanya membawakan teori, tetapi juga kasus-kasus di kehidupan nyata yang sangat menarik dan menyentuh.</p>
+            .top-right {
+                position: absolute;
+                right: 10px;
+                top: 18px;
+            }
 
-                            <div class="testee">
-                                <h6><strong>Bani Risset</strong></h6>
-                                <span>IT & Public Communication, <br>Indonesia AIDS Coalition (IAC)</span>
-                            </div>
-                        </div>
-                        <div class="testi-text">
-                            <p>Dengan mengikuti collaborative learning mengenai kesehatan mental dengan Yayasan ARTI, saya jadi memahami kalau kesehatan secara teori merupakan hal yang kompleks. Dalam sesi collaborative learning ini Yayasan ARTI tidak hanya membawakan teori, tetapi juga kasus-kasus di kehidupan nyata yang sangat menarik dan menyentuh.</p>
+            .content {
+                text-align: center;
+            }
 
-                            <div class="testee">
-                                <h6><strong>Bani Risset</strong></h6>
-                                <span>IT & Public Communication, <br>Indonesia AIDS Coalition (IAC)</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+            .title {
+                font-size: 84px;
+            }
 
-        <div class="contact-form">
-            <div class="container">
-                <div class="row row-cols-md-2">
-                    <div class="col-md-7 d-flex align-self-center justify-content-center text-center">
-                        <h1>Get in touch <br>with us!</h1>
-                    </div>
-                    <div class="col-md-5 the-form">
-                        <form action="{{ route('frontend.contact.submit') }}" method="post">
-                            @csrf
-                            <div class="form-group">
-                                <div class="frm">
-                                    <label for="name">Name</label>
-                                    <input type="text" name="name" id="name" class="form-control" placeholder="Michael James" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="frm">
-                                    <label for="email">Email</label>
-                                    <input type="email" name="email" id="email" class="form-control" placeholder="michael@somemail.com" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="frm">
-                                    <label for="msg">Message</label>
-                                    <textarea name="message" id="msg" class="form-control" rows="5" placeholder="Hello. I'm interesting in your ..." required></textarea>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="frm b-submit">
-                                    <button type="submit" class="btn-secondary float-right">Submit</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-@endsection
+            .links > a {
+                color: #636b6f;
+                padding: 0 25px;
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+
+            .m-b-md {
+                margin-bottom: 30px;
+            }
+        </style>
+        @stack('after-styles')
+    </head>
+    <body>
+        {{-- @include('includes.partials.read-only')
+        @include('includes.partials.announcements') --}}
+        @include('includes.partials.logged-in-as')
+
+        <div id="app" class="flex-center position-ref full-height">
+            <div class="top-right links">
+                @auth
+                    @if ($logged_in_user->isUser())
+                        <a href="{{ route('frontend.user.dashboard') }}">@lang('Dashboard')</a>
+                    @endif
+
+                    <a href="{{ route('frontend.user.account') }}">@lang('Account')</a>
+                @else
+                    <a href="{{ route('frontend.auth.login') }}">@lang('Login')</a>
+
+                    @if (config('boilerplate.access.user.registration'))
+                        <a href="{{ route('frontend.auth.register') }}">@lang('Register')</a>
+                    @endif
+                @endauth
+            </div><!--top-right-->
+
+            <div class="content">
+                @include('includes.partials.messages')
+
+                <div class="title m-b-md">
+                    <example-component></example-component>
+                </div><!--title-->
+
+                <div class="links">
+                    <a href="http://laravel-boilerplate.com" target="_blank"><i class="fa fa-book"></i> @lang('Docs')</a>
+                    <a href="https://github.com/rappasoft/laravel-boilerplate" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                </div><!--links-->
+            </div><!--content-->
+        </div><!--app-->
+
+        @stack('before-scripts')
+        <script src="{{ mix('js/manifest.js') }}"></script>
+        <script src="{{ mix('js/vendor.js') }}"></script>
+        <script src="{{ mix('js/frontend.js') }}"></script>
+        @stack('after-scripts')
+    </body>
+</html>

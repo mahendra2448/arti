@@ -14,21 +14,7 @@
     </button>
 
     <ul class="c-header-nav d-md-down-none">
-        <li class="c-header-nav-item px-3"><a class="c-header-nav-link" href="{{ route('frontend.index') }}">@lang('Home')</a></li>
-
-        @if(config('boilerplate.locale.status') && count(config('boilerplate.locale.languages')) > 1)
-            <li class="c-header-nav-item dropdown">
-                <x-utils.link
-                    :text="__(getLocaleName(app()->getLocale()))"
-                    class="c-header-nav-link dropdown-toggle"
-                    id="navbarDropdownLanguageLink"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false" />
-
-                @include('includes.partials.lang')
-            </li>
-        @endif
+        <li class="c-header-nav-item px-3"><a class="c-header-nav-link" href="{{ route('frontend.index') }}" target="_blank">@lang('Home')</a></li>
     </ul>
 
     <ul class="c-header-nav ml-auto mr-4">

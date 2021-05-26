@@ -53,7 +53,7 @@ Route::group(['as' => 'auth.'], function () {
                             ->breadcrumbs(function (Trail $trail) {
                                 $trail->parent('frontend.user.account')
                                     ->push(__('Enable Two Factor Authentication'), route('frontend.auth.account.2fa.create'));
-                            });
+                        });
                     });
 
                     Route::group(['middleware' => '2fa:enabled'], function () {
