@@ -94,5 +94,6 @@ $(function () {
 })
 // Carousel delay
 $('.carousel').carousel({
-    interval: false
+    interval: 3000,
+    cycle: true
 })

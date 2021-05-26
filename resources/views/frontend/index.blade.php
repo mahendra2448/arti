@@ -3,16 +3,52 @@
 
 @section('content')
     <main id="content">
-        <div class="section header" style="background-image: linear-gradient(black, black), url('{{url('img/bg/homepic.webp')}}')">
-            <div class="container small-device-home position-relative">
-                <div class="d-block heading-text">
-                    <div class="heading">
-                        <span>Yayasan ARTI</span>
+        <div id="carousel-arti" class="carousel slide carousel-fade" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="section header" style="background-image: linear-gradient(black, black), url('{{url('img/bg/homepic.webp')}}')">
+                        <div class="container small-device-home position-relative">
+                            <div class="d-block heading-text">
+                                <div class="heading">
+                                    <span>Yayasan ARTI</span>
+                                </div>
+                                <div class="sub-heading mb-5">
+                                    <span>Helping others striving for the best</span>
+                                </div>
+                                <a href="about" class="text-decoration-none btn-primary">About Us</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="sub-heading mb-5">
-                        <span>Helping others striving for the best</span>
+                </div>
+                <div class="carousel-item">
+                    <div class="section header" style="background-image: linear-gradient(black, black), url('{{url('img/bg/home1.jpg')}}')">
+                        <div class="container small-device-home position-relative">
+                            <div class="d-block heading-text">
+                                <div class="heading">
+                                    <span>Yayasan ARTI</span>
+                                </div>
+                                <div class="sub-heading mb-5">
+                                    <span>Helping others striving for the best</span>
+                                </div>
+                                <a href="about" class="text-decoration-none btn-primary">About Us</a>
+                            </div>
+                        </div>
                     </div>
-                    <a href="{{route('frontend.about')}}" class="text-decoration-none btn-primary">About Us</a>
+                </div>
+                <div class="carousel-item">
+                    <div class="section header" style="background-image: linear-gradient(black, black), url('{{url('img/bg/home2.jpg')}}')">
+                        <div class="container small-device-home position-relative">
+                            <div class="d-block heading-text">
+                                <div class="heading">
+                                    <span>Yayasan ARTI</span>
+                                </div>
+                                <div class="sub-heading mb-5">
+                                    <span>Helping others striving for the best</span>
+                                </div>
+                                <a href="about" class="text-decoration-none btn-primary">About Us</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
