@@ -14,7 +14,7 @@
     </button>
 
     <ul class="c-header-nav d-md-down-none">
-        <li class="c-header-nav-item px-3"><a class="c-header-nav-link" href="{{ route('frontend.index') }}" target="_blank">@lang('Home')</a></li>
+        <li class="c-header-nav-item px-3"><a class="c-header-nav-link" href="{{ route('frontend.index') }}" data-toggle="tooltip" data-placement="right" title="Visit Website"  target="_blank">@lang('Home')</a></li>
     </ul>
 
     <ul class="c-header-nav ml-auto mr-4">
@@ -24,6 +24,7 @@
                     <div class="c-avatar">
                         <img class="c-avatar-img" src="{{ $logged_in_user->avatar }}" alt="{{ $logged_in_user->email ?? '' }}">
                     </div>
+                    <span class="ml-2 d-md-down-none"><b>{{ $logged_in_user->name }}</b></span>
                 </x-slot>
             </x-utils.link>
 
@@ -32,6 +33,15 @@
                     <strong>@lang('Account')</strong>
                 </div>
 
+                <x-utils.link
+                    class="dropdown-item"
+                    icon="c-icon mr-2 cil-user"
+                    onclick="event.preventDefault();document.getElementById('user-acc').submit();">
+                    <x-slot name="text">
+                        @lang('Account')
+                        <x-forms.get :action="route('frontend.user.account')" id="user-acc" class="d-none" />
+                    </x-slot>
+                </x-utils.link>
                 <x-utils.link
                     class="dropdown-item"
                     icon="c-icon mr-2 cil-account-logout"

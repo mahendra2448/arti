@@ -46,15 +46,6 @@
                                         aria-selected="false" />
                                 @endif
 
-                                <x-utils.link
-                                    :text="__('Two Factor Authentication')"
-                                    class="nav-link"
-                                    id="two-factor-authentication-tab"
-                                    data-toggle="pill"
-                                    href="#two-factor-authentication"
-                                    role="tab"
-                                    aria-controls="two-factor-authentication"
-                                    aria-selected="false"/>
                             </div>
                         </nav>
 
@@ -73,9 +64,6 @@
                                 </div><!--tab-password-->
                             @endif
 
-                            <div class="tab-pane fade pt-3" id="two-factor-authentication" role="tabpanel" aria-labelledby="two-factor-authentication-tab">
-                                @include('frontend.user.account.tabs.two-factor-authentication')
-                            </div><!--tab-information-->
                         </div><!--tab-content-->
                     </x-slot>
                 </x-frontend.card>
