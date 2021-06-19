@@ -6,7 +6,7 @@
         <div id="carousel-arti" class="carousel slide carousel-fade" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <div class="section header" style="background-image: linear-gradient(black, black), url('{{url('img/bg/homepic.webp')}}')">
+                    <div class="section header" style="background-image: linear-gradient(to left, rgba(12,41,65,.75) 20%, transparent 70%), url('{{url('img/bg/homepic.webp')}}')">
                         <div class="container small-device-home position-relative">
                             <div class="d-block heading-text">
                                 <div class="heading">
@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <div class="section header" style="background-image: linear-gradient(black, black), url('{{url('img/bg/home1.jpg')}}')">
+                    <div class="section header" style="background-image: linear-gradient(to left, rgba(12,41,65,.75) 20%, transparent 70%), url('{{url('img/bg/home1.jpg')}}')">
                         <div class="container small-device-home position-relative">
                             <div class="d-block heading-text">
                                 <div class="heading">
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <div class="section header" style="background-image: linear-gradient(black, black), url('{{url('img/bg/home2.jpg')}}')">
+                    <div class="section header" style="background-image: linear-gradient(to left, rgba(12,41,65,.75) 20%, transparent 70%), url('{{url('img/bg/home2.jpg')}}')">
                         <div class="container small-device-home position-relative">
                             <div class="d-block heading-text">
                                 <div class="heading">
@@ -54,30 +54,30 @@
         </div>
 
         <div class="section desc">
-            <div class="orn-left"></div>
-            <div class="orn-right"></div>
             <div class="container">
                 <div class="row about">
                     <div class="col-md-7 d-flex align-items-center">
-                        <p><strong>YAYASAN ARTI</strong> adalah sebuah organisasi non-profit yang berdiri sejak tahun 2001. ARTI lahir dari kepedulian para akademis, pendidik, pegiat hak anak, dan aktivis sosial untuk menciptakan kepedulian masyarakat Indonesia terhadap <strong>hak-hak dan kesejahteraan anak, serta penghormatan terhadap martabat manusia</strong>.</p>
+                        <p><strong>YAYASAN ARTI</strong> hadir untuk memperjuangkan hak atas martabat, kehidupan yang layak, dan keadilan sosial bagi kelompok marjinal, anak, dan remaja melalui <strong>Penelitian dan Pelatihan</strong>.</p>
+                        <div class="bg-desc"></div>
                     </div>
                     <div class="col-md-5">
                         <div class="img-desc"></div>
                     </div>
                 </div>
                 <div class="row about two">
-                    <div class="col-12 desc">
+                    <div class="col-12 py-4">
+                        <div class="bg-desc two"></div>
                         <p>
-                            ARTI memiliki fokus untuk melakukan <strong>penelitian aksi</strong> dan <strong>pengembangan kapasitas</strong>, yang berfokus pada pendekatan partisipatoris sebagai metode yang digunakan.
+                            Yayasan ARTI memiliki fokus untuk melakukan Penelitian Tindakan (Action Research) dan Pengembangan Kapasitas (Capacity Building), dengan mengggunakan pendekatan partisipatoris.
                         </p>
                     </div>
                     <div class="col-md-6 research">
                         <div class="ic"></div>
-                        <span class="title">Penelitian</span>
+                        <span class="title">Research</span>
                     </div>
                     <div class="col-md-6 training">
                         <div class="ic"></div>
-                        <span class="title">Edukasi &<br>Pelatihan</span>
+                        <span class="title">Capacity Building</span>
                     </div>
                 </div>
             </div>
@@ -150,7 +150,7 @@
                             <p>Dengan mengikuti collaborative learning mengenai kesehatan mental dengan Yayasan ARTI, saya jadi memahami kalau kesehatan secara teori merupakan hal yang kompleks. Dalam sesi collaborative learning ini Yayasan ARTI tidak hanya membawakan teori, tetapi juga kasus-kasus di kehidupan nyata yang sangat menarik dan menyentuh.</p>
 
                             <div class="testee">
-                                <h6><strong>Bani Risset</strong></h6>
+                                <p><strong>Bani Risset</strong></p>
                                 <span>IT & Public Communication, <br>Indonesia AIDS Coalition (IAC)</span>
                             </div>
                         </div>
@@ -158,7 +158,7 @@
                             <p>Dengan mengikuti collaborative learning mengenai kesehatan mental dengan Yayasan ARTI, saya jadi memahami kalau kesehatan secara teori merupakan hal yang kompleks. Dalam sesi collaborative learning ini Yayasan ARTI tidak hanya membawakan teori, tetapi juga kasus-kasus di kehidupan nyata yang sangat menarik dan menyentuh.</p>
 
                             <div class="testee">
-                                <h6><strong>Bani Risset</strong></h6>
+                                <p><strong>Bani Risset</strong></p>
                                 <span>IT & Public Communication, <br>Indonesia AIDS Coalition (IAC)</span>
                             </div>
                         </div>
@@ -166,7 +166,7 @@
                             <p>Dengan mengikuti collaborative learning mengenai kesehatan mental dengan Yayasan ARTI, saya jadi memahami kalau kesehatan secara teori merupakan hal yang kompleks. Dalam sesi collaborative learning ini Yayasan ARTI tidak hanya membawakan teori, tetapi juga kasus-kasus di kehidupan nyata yang sangat menarik dan menyentuh.</p>
 
                             <div class="testee">
-                                <h6><strong>Bani Risset</strong></h6>
+                                <p><strong>Bani Risset</strong></p>
                                 <span>IT & Public Communication, <br>Indonesia AIDS Coalition (IAC)</span>
                             </div>
                         </div>
@@ -199,7 +199,7 @@
                             <div class="form-group">
                                 <div class="frm">
                                     <label for="msg">Message</label>
-                                    <textarea name="message" id="msg" class="form-control" rows="5" placeholder="Hello. I'm interesting in your ..." required></textarea>
+                                    <textarea name="message" id="msg" class="form-control" rows="5" placeholder="Hello. I'm interested in your ..." required></textarea>
                                 </div>
                             </div>
                             <div class="form-group">

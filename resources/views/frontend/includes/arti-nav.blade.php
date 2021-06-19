@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-md fixed-top">
         <div class="container">
             <a class="navbar-brand" href="{{route('frontend.index')}}">
-                <img class="img-brand" src="{{url('img/logo/logo-inverted.png')}}" alt="Yayasan ARTI logo">
+                <img class="img-brand" src="{{url('img/logo/logo.png')}}" alt="Yayasan ARTI logo">
             </a>
             
             <div class="mobile-menu">
@@ -58,7 +58,7 @@
                         <a class="nav-link {{ activeClass(Route::is('frontend.experiences')) }}" href="{{route('frontend.experiences')}}">Our Experiences</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ activeClass(Route::is('frontend.contact')) }}" href="{{route('frontend.contact')}}">Contact</a>
+                        <a class="nav-link btn-ctc {{ activeClass(Route::is('frontend.contact')) }}" href="{{route('frontend.contact')}}">Contact</a>
                     </li>
                 </ul>
             </div>

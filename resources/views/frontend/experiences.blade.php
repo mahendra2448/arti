@@ -15,16 +15,21 @@
 
     <div class="section" style="background-color:#F3F2E3">
         <div class="container pg-experiences">
+            <div class="text-center font-weight-bold mb-5">
+                Aktivitas kami meliputi penelitian, pendidikan & pelatihan, serta publikasi.
+            </div>
             <div id="penelitian" class="observeWrapper">
                 <div class="head"><h1>Penelitian</h1></div>
                 <div class="observeArticle">
                     <div class="row">
                         <div class="col-md-4 pr-0 when-small">
-                            <div class="ob-image" style="background-image: linear-gradient(rgba(188,135,153,.5), rgba(188,135,153,.5)), url('{{url('img/bg/arti-mother-daughter.webp')}}')"></div>
+                            <div class="ob-image">
+                                <img src="{{url('img/bg/arti-mother-daughter.webp')}}" alt="ibu dan anak">
+                            </div>
                         </div>
                         <div class="col-md-8 pl-0 col-12">
                             <div class="articleSlide d-flex">
-                                <div class="side">
+                                <div class="side norm">
                                     <div class="article">
                                         <div class="titleYear">
                                             <div class="title">Research and Development Training from Educatinal Comic on Transformation  and Peace Education  in Poso</div>
@@ -53,7 +58,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="side">
+                                <div class="side norm">
                                     <div class="article">
                                         <div class="titleYear">
                                             <div class="title">Research and Development Training from Educatinal Comic on Transformation  and Peace Education  in Poso</div>
@@ -82,7 +87,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="side">
+                                <div class="side norm">
                                     <div class="article">
                                         <div class="titleYear">
                                             <div class="title">Research and Development Training from Educatinal Comic on Transformation  and Peace Education  in Poso</div>
@@ -111,7 +116,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="side">
+                                <div class="side norm">
                                     <div class="article">
                                         <div class="titleYear">
                                             <div class="title">Research and Development Training from Educatinal Comic on Transformation  and Peace Education  in Poso</div>
@@ -151,11 +156,13 @@
                 <div class="observeArticle">
                     <div class="row">
                         <div class="col-md-4 pr-0 when-small">
-                            <div class="ob-image" style="filter:grayscale(1); background-image: linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.3)), url('{{url('img/bg/arti-kids-learning.webp')}}')"></div>
+                            <div class="ob-image">
+                                <img src="{{url('img/bg/arti-kids-learning.webp')}}" alt="anak-anak belajar">
+                            </div>
                         </div>
                         <div class="col-md-8 pl-0 col-12">
                             <div class="eduSlide d-flex">
-                                <div class="side">
+                                <div class="side norm">
                                     <div class="article">
                                         <div class="titleYear">
                                             <div class="title">Intervention Training to Deal with Health-Related Stigma</div>
@@ -186,7 +193,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="side">
+                                <div class="side norm">
                                     <div class="article">
                                         <div class="titleYear">
                                             <div class="title">Child and Adolescent Mental Health - Online Training</div>
@@ -207,7 +214,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="side">
+                                <div class="side norm">
                                     <div class="article">
                                         <div class="titleYear">
                                             <div class="title">Intervention Training to Deal with Health-Related Stigma</div>
@@ -238,7 +245,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="side">
+                                <div class="side norm">
                                     <div class="article">
                                         <div class="titleYear">
                                             <div class="title">Child and Adolescent Mental Health - Online Training</div>
@@ -271,7 +278,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="publicSlide publication d-flex">
-                                <div class="side">
+                                <div class="side publikasi">
                                     <div class="article">
                                         <div class="titleYear">
                                             <div class="title">Modul Pelatihan Mental Health First Aid</div>
@@ -300,7 +307,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="side">
+                                <div class="side publikasi">
                                     <div class="article">
                                         <div class="titleYear">
                                             <div class="title">Manual Sosialisasi Konvensi Hak-Hak Anak</div>
@@ -329,7 +336,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="side">
+                                <div class="side publikasi">
                                     <div class="article">
                                         <div class="titleYear">
                                             <div class="title">Modul Pelatihan Mental Health First Aid</div>
@@ -358,7 +365,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="side">
+                                <div class="side publikasi">
                                     <div class="article">
                                         <div class="titleYear">
                                             <div class="title">Manual Sosialisasi Konvensi Hak-Hak Anak</div>

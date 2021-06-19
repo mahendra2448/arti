@@ -26,6 +26,8 @@ body {
   font-family: 'Metropolis', sans-serif;
   font-weight: normal;
   position: relative;
+  /* ORNAMENTS ================= */
+  /* BUTTONS =================== */
 }
 
 body .orn-half-circle-pink {
@@ -132,6 +134,46 @@ body .orn-pink-box {
     left: 180px;
     height: 17rem;
   }
+}
+
+body .btn-primary {
+  color: #fff;
+  font-size: 1rem;
+  background-color: var(--color-primary);
+  border: thin solid var(--color-primary);
+  padding: .7rem 1.5rem;
+  margin-top: .5rem;
+  border-radius: 2.5rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+body .btn-primary:hover {
+  color: var(--color-primary);
+  background-color: #fff;
+  border: thin solid var(--color-primary);
+}
+
+body .btn-primary.head {
+  margin-top: 1rem;
+}
+
+body .btn-secondary {
+  color: var(--color-primary);
+  font-size: 1rem;
+  background-color: var(--color-secondary);
+  border: thin solid var(--color-secondary);
+  padding: .7rem 2.5rem;
+  margin-top: .5rem;
+  border-radius: 2rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+body .btn-secondary:hover {
+  color: var(--color-secondary);
+  background-color: transparent;
+  border: thin solid var(--color-secondary);
 }
 
 body header {
@@ -325,10 +367,10 @@ body header .navbar .navbar-collapse .navbar-nav .nav-item {
 
 body header .navbar .navbar-collapse .navbar-nav .nav-item .nav-link {
   color: #fff;
-  padding: .5rem;
+  padding: .3rem;
   margin-left: 3.5rem;
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
 body header .navbar .navbar-collapse .navbar-nav .nav-item .nav-link:hover {
@@ -338,6 +380,20 @@ body header .navbar .navbar-collapse .navbar-nav .nav-item .nav-link:hover {
 body header .navbar .navbar-collapse .navbar-nav .nav-item .nav-link.active {
   color: var(--color-third);
   font-weight: bold;
+}
+
+body header .navbar .navbar-collapse .navbar-nav .nav-item .nav-link.btn-ctc {
+  color: var(--color-secondary);
+  border: thin solid var(--color-secondary);
+  border-radius: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+body header .navbar .navbar-collapse .navbar-nav .nav-item .nav-link.btn-ctc:hover {
+  color: var(--color-primary);
+  background-color: var(--color-secondary);
+  border: thin solid var(--color-secondary);
 }
 
 body header .navbar.navbar-scrolled {
@@ -358,8 +414,6 @@ body main {
           animation-iteration-count: 1;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-  /* BUTTONS
-        =============================== */
   /* HOMEPAGE START 
         ===================================*/
   /* HOMEPAGE END 
@@ -422,46 +476,6 @@ body main .section {
   position: relative;
 }
 
-body main .btn-primary {
-  color: #fff;
-  font-size: 1rem;
-  background-color: var(--color-primary);
-  border: thin solid var(--color-primary);
-  padding: .7rem 1.5rem;
-  margin-top: .5rem;
-  border-radius: 2.5rem;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-body main .btn-primary:hover {
-  color: var(--color-primary);
-  background-color: #fff;
-  border: thin solid var(--color-primary);
-}
-
-body main .btn-primary.head {
-  margin-top: 1rem;
-}
-
-body main .btn-secondary {
-  color: var(--color-primary);
-  font-size: 1rem;
-  background-color: var(--color-secondary);
-  border: thin solid var(--color-secondary);
-  padding: .7rem 2.5rem;
-  margin-top: .5rem;
-  border-radius: 2rem;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-body main .btn-secondary:hover {
-  color: var(--color-secondary);
-  background-color: var(--color-primary);
-  border: thin solid var(--color-secondary);
-}
-
 body main .header {
   color: var(--soft-white);
   text-shadow: 1px 1px #1A1A1A;
@@ -470,7 +484,6 @@ body main .header {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-blend-mode: saturation;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -541,7 +554,7 @@ body main .header.in-page {
 }
 
 body main .desc {
-  padding-top: 5rem;
+  padding: 5rem 0;
   position: relative;
 }
 
@@ -552,24 +565,49 @@ body main .desc {
 }
 
 body main .desc .about {
-  padding: 8rem;
+  padding: 5rem;
   max-width: 80%;
   margin: 0 auto;
-  font: 200 1.2rem/1.5rem 'Metropolis';
+  font: 400 1.2rem/1.5rem 'Metropolis';
 }
 
 @media (max-width: 768px) {
   body main .desc .about {
+    font: 400 .9rem/1.2rem 'Metropolis';
     padding: 0;
   }
 }
 
-body main .desc .about strong {
-  font-weight: 500;
+body main .desc .about .bg-desc {
+  position: absolute;
+  width: 120%;
+  height: 100%;
+  top: 0;
+  left: -2rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: thin solid #1C4A6E;
+  border-radius: 5rem;
+  z-index: -1;
+}
+
+body main .desc .about .bg-desc.two {
+  width: 110%;
+}
+
+@media (max-width: 768px) {
+  body main .desc .about .bg-desc {
+    height: 130%;
+    top: -2rem;
+  }
+  body main .desc .about .bg-desc.two {
+    left: -1rem;
+    height: 100%;
+    top: -0.5rem;
+  }
 }
 
 body main .desc .about .img-desc {
-  background-image: url("../img/bg/img-desc.webp");
+  background-image: url("../img/bg/arti.png");
   background-position: center;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -577,93 +615,59 @@ body main .desc .about .img-desc {
 }
 
 body main .desc .about.two {
+  padding: 7rem 5rem;
   text-align: center;
   max-width: 70%;
 }
 
 @media (max-width: 768px) {
   body main .desc .about.two {
+    padding: 5rem 1rem;
     max-width: 100%;
   }
 }
 
-body main .desc .about.two .desc {
-  max-width: 75%;
-  margin: 0 auto;
-}
-
-body main .desc .about.two .col-6 {
-  padding: 3rem;
-}
-
-body main .desc .about.two .col-6 span.title {
+body main .desc .about.two .col-md-6 span.title {
   font-size: 1.3rem;
   font-weight: bold;
 }
 
 body main .desc .about.two .research .ic {
-  background-image: url("../img/bg/bg-research.webp");
+  background-image: url("../img/bg/research.png");
   background-position: center;
   background-repeat: no-repeat;
-  height: 140px;
+  height: 180px;
   margin-bottom: 1rem;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
 
 body main .desc .about.two .research .ic:hover {
-  -webkit-filter: contrast(150%);
-          filter: contrast(150%);
+  -webkit-filter: contrast(120%);
+          filter: contrast(120%);
   -webkit-transition: all .2s;
   transition: all .2s;
 }
 
 body main .desc .about.two .training .ic {
-  background-image: url("../img/bg/bg-training.webp");
+  background-image: url("../img/bg/building.png");
   background-position: center;
   background-repeat: no-repeat;
-  height: 140px;
+  height: 180px;
   margin-bottom: 1rem;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
 
 body main .desc .about.two .training .ic:hover {
-  -webkit-filter: contrast(150%);
-          filter: contrast(150%);
+  -webkit-filter: contrast(120%);
+          filter: contrast(120%);
   -webkit-transition: all .2s;
   transition: all .2s;
 }
 
-body main .desc .orn-left {
-  background-image: url("../img/bg/bg-orn-left.webp");
-  background-position: left;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 1450px;
-  width: 485px;
-}
-
-body main .desc .orn-right {
-  background-image: url("../img/bg/bg-orn-right.webp");
-  background-position: right;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 1450px;
-  width: 485px;
-}
-
-@media (max-width: 768px) {
-  body main .desc .orn-left {
-    background-size: 50%;
-  }
-  body main .desc .orn-right {
-    background-size: 50%;
-  }
+body main .experiences {
+  background-color: var(--soft-white);
 }
 
 body main .experiences h1 {
@@ -842,12 +846,12 @@ body main .testi .testi-wrapper .testi-slide .testi-text .testee {
 
 body main .testi .testi-wrapper .testi-slide.slick-slider .slick-prev {
   top: 30%;
-  left: -8rem;
+  left: -7rem;
 }
 
 body main .testi .testi-wrapper .testi-slide.slick-slider .slick-next {
   top: 30%;
-  right: -8rem;
+  right: -7rem;
 }
 
 body main .testi .testi-wrapper .testi-slide.slick-slider .slick-slide:focus {
@@ -873,12 +877,12 @@ body main .testi .testi-wrapper .quotes {
 
 body main .testi .testi-wrapper .quotes.open {
   background-image: url("../img/iconified/ic-q-open.png");
-  left: 17%;
+  left: 20%;
 }
 
 body main .testi .testi-wrapper .quotes.close {
   background-image: url("../img/iconified/ic-q-close.png");
-  right: 17%;
+  right: 20%;
   bottom: 80px;
 }
 
@@ -1588,6 +1592,8 @@ body main .pg-experiences .observeWrapper, body main .pg-experiences .educationW
   margin-bottom: 5rem;
   scroll-margin-top: 8rem;
   background-color: var(--color-primary);
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
 }
 
 body main .pg-experiences .observeWrapper .head h1, body main .pg-experiences .educationWrapper .head h1, body main .pg-experiences .publicationWrapper .head h1, body main .pg-experiences .partnershipWrapper .head h1 {
@@ -1620,6 +1626,8 @@ body main .pg-experiences .observeWrapper .observeArticle.partnership, body main
   height: auto;
   padding: 2rem 5rem;
   background-color: var(--color-third);
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
 }
 
 body main .pg-experiences .observeWrapper .observeArticle.partnership .p-image, body main .pg-experiences .educationWrapper .observeArticle.partnership .p-image, body main .pg-experiences .publicationWrapper .observeArticle.partnership .p-image, body main .pg-experiences .partnershipWrapper .observeArticle.partnership .p-image {
@@ -1633,18 +1641,18 @@ body main .pg-experiences .observeWrapper .observeArticle.partnership .p-image, 
 
 body main .pg-experiences .observeWrapper .observeArticle.partnership .p-image img, body main .pg-experiences .educationWrapper .observeArticle.partnership .p-image img, body main .pg-experiences .publicationWrapper .observeArticle.partnership .p-image img, body main .pg-experiences .partnershipWrapper .observeArticle.partnership .p-image img {
   width: 100%;
-  opacity: .8;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
 body main .pg-experiences .observeWrapper .observeArticle.partnership .p-image:hover img, body main .pg-experiences .educationWrapper .observeArticle.partnership .p-image:hover img, body main .pg-experiences .publicationWrapper .observeArticle.partnership .p-image:hover img, body main .pg-experiences .partnershipWrapper .observeArticle.partnership .p-image:hover img {
-  opacity: 1;
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
+  -webkit-filter: drop-shadow(1px 0 3px #333);
+          filter: drop-shadow(1px 0 3px #333);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
 @media (max-width: 768px) {
@@ -1659,8 +1667,18 @@ body main .pg-experiences .observeWrapper .observeArticle.partnership .p-image:h
 
 body main .pg-experiences .observeWrapper .observeArticle .ob-image, body main .pg-experiences .educationWrapper .observeArticle .ob-image, body main .pg-experiences .publicationWrapper .observeArticle .ob-image, body main .pg-experiences .partnershipWrapper .observeArticle .ob-image {
   height: 75vh;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: #bc8799;
+  overflow: hidden;
+  border-bottom-left-radius: 2rem;
+}
+
+body main .pg-experiences .observeWrapper .observeArticle .ob-image img, body main .pg-experiences .educationWrapper .observeArticle .ob-image img, body main .pg-experiences .publicationWrapper .observeArticle .ob-image img, body main .pg-experiences .partnershipWrapper .observeArticle .ob-image img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.4;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
 }
 
 body main .pg-experiences .observeWrapper .observeArticle .articleSlide, body main .pg-experiences .observeWrapper .observeArticle .eduSlide, body main .pg-experiences .observeWrapper .observeArticle .publicSlide, body main .pg-experiences .educationWrapper .observeArticle .articleSlide, body main .pg-experiences .educationWrapper .observeArticle .eduSlide, body main .pg-experiences .educationWrapper .observeArticle .publicSlide, body main .pg-experiences .publicationWrapper .observeArticle .articleSlide, body main .pg-experiences .publicationWrapper .observeArticle .eduSlide, body main .pg-experiences .publicationWrapper .observeArticle .publicSlide, body main .pg-experiences .partnershipWrapper .observeArticle .articleSlide, body main .pg-experiences .partnershipWrapper .observeArticle .eduSlide, body main .pg-experiences .partnershipWrapper .observeArticle .publicSlide {
@@ -1680,7 +1698,9 @@ body main .pg-experiences .observeWrapper .observeArticle .articleSlide .side, b
       -ms-flex: 1;
           flex: 1;
   height: 75vh;
-  padding: 3rem 2rem 3rem 1rem;
+  padding: 3rem 1rem;
+  border-left: solid thin #0C2941;
+  background-color: var(--color-third);
 }
 
 @media (max-width: 768px) {
@@ -1690,12 +1710,8 @@ body main .pg-experiences .observeWrapper .observeArticle .articleSlide .side, b
   }
 }
 
-body main .pg-experiences .observeWrapper .observeArticle .articleSlide .side:nth-child(odd), body main .pg-experiences .observeWrapper .observeArticle .eduSlide .side:nth-child(odd), body main .pg-experiences .observeWrapper .observeArticle .publicSlide .side:nth-child(odd), body main .pg-experiences .educationWrapper .observeArticle .articleSlide .side:nth-child(odd), body main .pg-experiences .educationWrapper .observeArticle .eduSlide .side:nth-child(odd), body main .pg-experiences .educationWrapper .observeArticle .publicSlide .side:nth-child(odd), body main .pg-experiences .publicationWrapper .observeArticle .articleSlide .side:nth-child(odd), body main .pg-experiences .publicationWrapper .observeArticle .eduSlide .side:nth-child(odd), body main .pg-experiences .publicationWrapper .observeArticle .publicSlide .side:nth-child(odd), body main .pg-experiences .partnershipWrapper .observeArticle .articleSlide .side:nth-child(odd), body main .pg-experiences .partnershipWrapper .observeArticle .eduSlide .side:nth-child(odd), body main .pg-experiences .partnershipWrapper .observeArticle .publicSlide .side:nth-child(odd) {
-  background-color: var(--color-third);
-}
-
-body main .pg-experiences .observeWrapper .observeArticle .articleSlide .side:nth-child(even), body main .pg-experiences .observeWrapper .observeArticle .eduSlide .side:nth-child(even), body main .pg-experiences .observeWrapper .observeArticle .publicSlide .side:nth-child(even), body main .pg-experiences .educationWrapper .observeArticle .articleSlide .side:nth-child(even), body main .pg-experiences .educationWrapper .observeArticle .eduSlide .side:nth-child(even), body main .pg-experiences .educationWrapper .observeArticle .publicSlide .side:nth-child(even), body main .pg-experiences .publicationWrapper .observeArticle .articleSlide .side:nth-child(even), body main .pg-experiences .publicationWrapper .observeArticle .eduSlide .side:nth-child(even), body main .pg-experiences .publicationWrapper .observeArticle .publicSlide .side:nth-child(even), body main .pg-experiences .partnershipWrapper .observeArticle .articleSlide .side:nth-child(even), body main .pg-experiences .partnershipWrapper .observeArticle .eduSlide .side:nth-child(even), body main .pg-experiences .partnershipWrapper .observeArticle .publicSlide .side:nth-child(even) {
-  background-color: var(--soft-grey);
+body main .pg-experiences .observeWrapper .observeArticle .articleSlide .side.norm:nth-child(even), body main .pg-experiences .observeWrapper .observeArticle .eduSlide .side.norm:nth-child(even), body main .pg-experiences .observeWrapper .observeArticle .publicSlide .side.norm:nth-child(even), body main .pg-experiences .educationWrapper .observeArticle .articleSlide .side.norm:nth-child(even), body main .pg-experiences .educationWrapper .observeArticle .eduSlide .side.norm:nth-child(even), body main .pg-experiences .educationWrapper .observeArticle .publicSlide .side.norm:nth-child(even), body main .pg-experiences .publicationWrapper .observeArticle .articleSlide .side.norm:nth-child(even), body main .pg-experiences .publicationWrapper .observeArticle .eduSlide .side.norm:nth-child(even), body main .pg-experiences .publicationWrapper .observeArticle .publicSlide .side.norm:nth-child(even), body main .pg-experiences .partnershipWrapper .observeArticle .articleSlide .side.norm:nth-child(even), body main .pg-experiences .partnershipWrapper .observeArticle .eduSlide .side.norm:nth-child(even), body main .pg-experiences .partnershipWrapper .observeArticle .publicSlide .side.norm:nth-child(even) {
+  border-bottom-right-radius: 2rem;
 }
 
 body main .pg-experiences .observeWrapper .observeArticle .articleSlide .side .article, body main .pg-experiences .observeWrapper .observeArticle .eduSlide .side .article, body main .pg-experiences .observeWrapper .observeArticle .publicSlide .side .article, body main .pg-experiences .educationWrapper .observeArticle .articleSlide .side .article, body main .pg-experiences .educationWrapper .observeArticle .eduSlide .side .article, body main .pg-experiences .educationWrapper .observeArticle .publicSlide .side .article, body main .pg-experiences .publicationWrapper .observeArticle .articleSlide .side .article, body main .pg-experiences .publicationWrapper .observeArticle .eduSlide .side .article, body main .pg-experiences .publicationWrapper .observeArticle .publicSlide .side .article, body main .pg-experiences .partnershipWrapper .observeArticle .articleSlide .side .article, body main .pg-experiences .partnershipWrapper .observeArticle .eduSlide .side .article, body main .pg-experiences .partnershipWrapper .observeArticle .publicSlide .side .article {
@@ -1727,6 +1743,19 @@ body main .pg-experiences .observeWrapper .observeArticle .articleSlide .side .a
   font-size: .9rem;
   font-weight: 400;
   margin-top: 1rem;
+}
+
+body main .pg-experiences .observeWrapper .observeArticle .articleSlide a, body main .pg-experiences .observeWrapper .observeArticle .eduSlide a, body main .pg-experiences .observeWrapper .observeArticle .publicSlide a, body main .pg-experiences .educationWrapper .observeArticle .articleSlide a, body main .pg-experiences .educationWrapper .observeArticle .eduSlide a, body main .pg-experiences .educationWrapper .observeArticle .publicSlide a, body main .pg-experiences .publicationWrapper .observeArticle .articleSlide a, body main .pg-experiences .publicationWrapper .observeArticle .eduSlide a, body main .pg-experiences .publicationWrapper .observeArticle .publicSlide a, body main .pg-experiences .partnershipWrapper .observeArticle .articleSlide a, body main .pg-experiences .partnershipWrapper .observeArticle .eduSlide a, body main .pg-experiences .partnershipWrapper .observeArticle .publicSlide a {
+  color: var(--color-primary);
+  text-decoration: none;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+body main .pg-experiences .observeWrapper .observeArticle .articleSlide a:hover, body main .pg-experiences .observeWrapper .observeArticle .eduSlide a:hover, body main .pg-experiences .observeWrapper .observeArticle .publicSlide a:hover, body main .pg-experiences .educationWrapper .observeArticle .articleSlide a:hover, body main .pg-experiences .educationWrapper .observeArticle .eduSlide a:hover, body main .pg-experiences .educationWrapper .observeArticle .publicSlide a:hover, body main .pg-experiences .publicationWrapper .observeArticle .articleSlide a:hover, body main .pg-experiences .publicationWrapper .observeArticle .eduSlide a:hover, body main .pg-experiences .publicationWrapper .observeArticle .publicSlide a:hover, body main .pg-experiences .partnershipWrapper .observeArticle .articleSlide a:hover, body main .pg-experiences .partnershipWrapper .observeArticle .eduSlide a:hover, body main .pg-experiences .partnershipWrapper .observeArticle .publicSlide a:hover {
+  color: var(--color-complement);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
 body main .pg-experiences .observeWrapper .observeArticle .articleSlide .slick-next, body main .pg-experiences .observeWrapper .observeArticle .eduSlide .slick-next, body main .pg-experiences .observeWrapper .observeArticle .publicSlide .slick-next, body main .pg-experiences .educationWrapper .observeArticle .articleSlide .slick-next, body main .pg-experiences .educationWrapper .observeArticle .eduSlide .slick-next, body main .pg-experiences .educationWrapper .observeArticle .publicSlide .slick-next, body main .pg-experiences .publicationWrapper .observeArticle .articleSlide .slick-next, body main .pg-experiences .publicationWrapper .observeArticle .eduSlide .slick-next, body main .pg-experiences .publicationWrapper .observeArticle .publicSlide .slick-next, body main .pg-experiences .partnershipWrapper .observeArticle .articleSlide .slick-next, body main .pg-experiences .partnershipWrapper .observeArticle .eduSlide .slick-next, body main .pg-experiences .partnershipWrapper .observeArticle .publicSlide .slick-next {
@@ -1845,6 +1874,78 @@ body main .contact .maps iframe {
   height: 100%;
   width: 100%;
   position: absolute;
+}
+
+.modal {
+  border-radius: 7px;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.modal .logo a img {
+  width: 30px;
+}
+
+.modal .modal-content {
+  background-color: transparent;
+  border: none;
+  border-radius: 7px;
+}
+
+.modal .modal-content .modal-body {
+  border-radius: 7px;
+  overflow: hidden;
+  background-color: var(--soft-white);
+  padding-left: 0px;
+  padding-right: 0px;
+  -webkit-box-shadow: 0 10px 50px -10px rgba(var(--dark-grey), 0.9);
+          box-shadow: 0 10px 50px -10px rgba(var(--dark-grey), 0.9);
+}
+
+.modal .modal-content .modal-body h5 {
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.modal .modal-content .modal-body p {
+  font-size: .9rem;
+  color: var(--dark-grey);
+}
+
+.modal .form-control {
+  border: none;
+  border-radius: 0;
+  border-bottom: thin solid #9b9b9b;
+  background-color: transparent;
+  padding-left: 0;
+  padding-right: 0;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.modal .form-control:active, .modal .form-control:focus, .modal .form-control:hover {
+  border-bottom: thin solid #000;
+  color: var(--color-primary);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none;
+}
+
+.modal .close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 1.5rem;
+}
+
+.modal .close span {
+  color: #9b9b9b;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.modal .close:hover span {
+  color: #000;
 }
 
 .footer {

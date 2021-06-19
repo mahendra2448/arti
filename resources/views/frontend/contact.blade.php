@@ -68,7 +68,7 @@
                             <div class="form-group">
                                 <div class="frm">
                                     <label for="msg">Message</label>
-                                    <textarea name="message" id="msg" class="form-control" rows="5" placeholder="Hello. I'm interesting in your ..." required></textarea>
+                                    <textarea name="message" id="msg" class="form-control" rows="5" placeholder="Hello. I'm interested in your ..." required></textarea>
                                 </div>
                             </div>
                             <div class="form-group">
