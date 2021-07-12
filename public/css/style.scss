@@ -791,6 +791,7 @@ body {
             }
             .vis-img {
                 padding: 0;
+                height: 35rem;
                 position: relative;
                 background-size: 70%;
                 background-repeat: no-repeat;
@@ -800,8 +801,8 @@ body {
                 .orn-pink-circle {
                     position: absolute;
                     top: 0; left: 0; bottom: 0; right: 0;
-                    width: 35%;
-                    height: 35%;
+                    width: 12rem;
+                    height: 12rem;
                     @media (max-width:768px) {
                         width: 25%;
                         height: 25%;
@@ -831,6 +832,7 @@ body {
             }
             .miss-img {
                 padding: 0;
+                height: 35rem;
                 position: relative;
                 background-size: 70%;
                 background-repeat: no-repeat;
@@ -840,8 +842,8 @@ body {
                 .orn-pink-triangle {
                     position: absolute;
                     top: 0; left: 0; bottom: 0; right: 0;
-                    width: 45%;
-                    height: 35%;
+                    width: 1rem;
+                    height: 1rem;
                     margin: auto;
                     border-left: 130px solid transparent;
                     border-right: 130px solid transparent;

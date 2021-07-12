@@ -281,7 +281,11 @@
                                 <div class="side publikasi">
                                     <div class="article">
                                         <div class="titleYear">
-                                            <div class="title">Modul Pelatihan Mental Health First Aid</div>
+                                            <div class="title">
+                                                <a href="#" data-title="modul pelatihan" data-toggle="modal" data-target="#publicationModal">
+                                                    <i class="fas fa-file-pdf">&nbsp</i> Modul Pelatihan Mental Health First Aid
+                                                </a>
+                                            </div>
                                             <div class="year">2020 Research</div>
                                         </div>
                                         <div class="art-desc">
@@ -290,7 +294,9 @@
                                     </div>
                                     <div class="article">
                                         <div class="titleYear">
-                                            <div class="title">Manual Pelatihan Membangun Budaya Damai dan Penyelesaian Konflik Tanpa Kekerasan</div>
+                                            <a href="#" data-title="Manual Pelatihan Membangun Budaya" data-toggle="modal" data-target="#publicationModal">
+                                                <i class="fas fa-file-pdf">&nbsp</i> Manual Pelatihan Membangun Budaya Damai dan Penyelesaian Konflik Tanpa Kekerasan
+                                            </a>
                                             <div class="year">2020 Research</div>
                                         </div>
                                         <div class="art-desc">
@@ -299,7 +305,11 @@
                                     </div>
                                     <div class="article">
                                         <div class="titleYear">
-                                            <div class="title">Manual Pengembangan Kabupaten/Kota Layak Anak</div>
+                                            <div class="title">
+                                                <a href="#" data-title="Manual Pengembangan Kabupaten/Kota" data-toggle="modal" data-target="#publicationModal">
+                                                    <i class="fas fa-file-pdf">&nbsp</i> Manual Pengembangan Kabupaten/Kota Layak Anak
+                                                </a>
+                                            </div>
                                             <div class="year">2020 Research</div>
                                         </div>
                                         <div class="art-desc">

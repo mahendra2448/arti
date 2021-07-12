@@ -1029,6 +1029,7 @@ body main .arti-vision .vis-desc p strong {
 
 body main .arti-vision .vis-img {
   padding: 0;
+  height: 35rem;
   position: relative;
   background-size: 70%;
   background-repeat: no-repeat;
@@ -1045,8 +1046,8 @@ body main .arti-vision .vis-img .orn-pink-circle {
   left: 0;
   bottom: 0;
   right: 0;
-  width: 35%;
-  height: 35%;
+  width: 12rem;
+  height: 12rem;
   margin: auto;
   border-radius: 50%;
   background-color: var(--color-complement) !important;
@@ -1091,6 +1092,7 @@ body main .arti-mission .miss-desc p strong {
 
 body main .arti-mission .miss-img {
   padding: 0;
+  height: 35rem;
   position: relative;
   background-size: 70%;
   background-repeat: no-repeat;
@@ -1107,8 +1109,8 @@ body main .arti-mission .miss-img .orn-pink-triangle {
   left: 0;
   bottom: 0;
   right: 0;
-  width: 45%;
-  height: 35%;
+  width: 1rem;
+  height: 1rem;
   margin: auto;
   border-left: 130px solid transparent;
   border-right: 130px solid transparent;

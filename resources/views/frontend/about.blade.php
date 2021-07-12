@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 vis-img">
-                    <img src="{{url('img/bg/arti-kids-play.webp')}}" alt="anak-anak yayasan arti foundation" class="w-100">
+                    <img src="{{url('img/bg/arti-kids-play.webp')}}" alt="anak-anak yayasan arti foundation" class="h-100 w-100">
                     <div class="orn-pink-circle"></div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
         <div class="container">
             <div class="row d-flex">
                 <div class="col-md-6 miss-img">
-                    <img src="{{url('img/bg/arti-kids.webp')}}" alt="anak yayasan arti foundation" class="w-100">
+                    <img src="{{url('img/bg/arti-kids.webp')}}" alt="anak yayasan arti foundation" class="h-100 w-100">
                     <div class="orn-pink-triangle"></div>
                 </div>
                 <div class="col-md-6 miss-desc d-flex align-items-center">

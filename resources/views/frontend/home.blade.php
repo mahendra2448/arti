@@ -86,56 +86,66 @@
         <div class="experiences">
             <h1>Our Experiences</h1>
             <div class="row row-cols-sm-1 row-cols-md-3 exp-thumbs">
-                <figure class="effect-jazz blue">
-                    <img src="{{url('img/exp/exp1.webp')}}" alt="exp1">
-                    <figcaption>
-                        <h2 class="m-auto">
-                            Mental Health <br> First Aid
-                        </h2>
-                    </figcaption>			
-                </figure>
-                <figure class="effect-jazz red">
-                    <img src="{{url('img/exp/exp2.webp')}}" alt="exp2">
-                    <figcaption>
-                        <h2 class="m-auto">
-                            Training <br> of Trainers
-                        </h2>
-                    </figcaption>			
-                </figure>
-                <figure class="effect-jazz blue">
-                    <img src="{{url('img/exp/exp3.webp')}}" alt="exp3">
-                    <figcaption>
-                        <h2 class="m-auto">
-                            Module <br>Development
-                        </h2>
-                    </figcaption>			
-                </figure>
-            </div>
-            <div class="row row-cols-sm-1 row-cols-md-3 exp-thumbs">
-                <figure class="effect-jazz red">
-                    <img src="{{url('img/exp/exp4.webp')}}" alt="exp4">
-                    <figcaption>
-                        <h2 class="m-auto">
-                        Mental Health & <br> Psychosocial Support
-                        </h2>
-                    </figcaption>			
-                </figure>
-                <figure class="effect-jazz blue">
-                    <img src="{{url('img/exp/exp5.webp')}}" alt="exp5">
-                    <figcaption>
-                        <h2 class="m-auto">
-                            Action <br> Research
-                        </h2>
-                    </figcaption>			
-                </figure>
-                <figure class="effect-jazz red">
-                    <img src="{{url('img/exp/exp6.webp')}}" alt="exp6">
-                    <figcaption>
-                        <h2 class="m-auto">
-                            Capacity <br> Building
-                        </h2>
-                    </figcaption>			
-                </figure>
+                <a href="{{route('frontend.experiences')}}" class="text-white">
+                    <figure class="effect-jazz blue">
+                        <img src="{{url('img/exp/exp1.webp')}}" alt="exp1">
+                        <figcaption>
+                            <h2 class="m-auto">
+                                Mental Health <br> First Aid
+                            </h2>
+                        </figcaption>			
+                    </figure>
+                </a>
+                <a href="{{route('frontend.experiences')}}" class="text-white">
+                    <figure class="effect-jazz red">
+                        <img src="{{url('img/exp/exp2.webp')}}" alt="exp2">
+                        <figcaption>
+                            <h2 class="m-auto">
+                                Training <br> of Trainers
+                            </h2>
+                        </figcaption>			
+                    </figure>
+                </a>
+                <a href="{{route('frontend.experiences')}}" class="text-white">
+                    <figure class="effect-jazz blue">
+                        <img src="{{url('img/exp/exp3.webp')}}" alt="exp3">
+                        <figcaption>
+                            <h2 class="m-auto">
+                                Module <br>Development
+                            </h2>
+                        </figcaption>			
+                    </figure>
+                </a>
+                <a href="{{route('frontend.experiences')}}" class="text-white">
+                    <figure class="effect-jazz red">
+                        <img src="{{url('img/exp/exp4.webp')}}" alt="exp4">
+                        <figcaption>
+                            <h2 class="m-auto">
+                            Mental Health & <br> Psychosocial Support
+                            </h2>
+                        </figcaption>			
+                    </figure>
+                </a>
+                <a href="{{route('frontend.experiences')}}" class="text-white">
+                    <figure class="effect-jazz blue">
+                        <img src="{{url('img/exp/exp5.webp')}}" alt="exp5">
+                        <figcaption>
+                            <h2 class="m-auto">
+                                Action <br> Research
+                            </h2>
+                        </figcaption>			
+                    </figure>
+                </a>
+                <a href="{{route('frontend.experiences')}}" class="text-white">
+                    <figure class="effect-jazz red">
+                        <img src="{{url('img/exp/exp6.webp')}}" alt="exp6">
+                        <figcaption>
+                            <h2 class="m-auto">
+                                Capacity <br> Building
+                            </h2>
+                        </figcaption>			
+                    </figure>
+                </a>
             </div>
         </div>
 
