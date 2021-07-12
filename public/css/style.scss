@@ -35,6 +35,10 @@ body {
     font-family: 'Metropolis', sans-serif;
     font-weight: normal; //normal
     position: relative;
+    ::selection {
+        color: var(--soft-white);
+        background: var(--color-primary);
+    }
 
     /* ORNAMENTS ================= */
     .orn-half-circle-pink {

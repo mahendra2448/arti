@@ -15,7 +15,7 @@
                                 <div class="sub-heading mb-5">
                                     <span>Helping others striving for the best</span>
                                 </div>
-                                <a href="about" class="text-decoration-none btn-primary">About Us</a>
+                                <a href="about" class="text-decoration-none btn-secondary">About Us</a>
                             </div>
                         </div>
                     </div>
@@ -30,7 +30,7 @@
                                 <div class="sub-heading mb-5">
                                     <span>Helping others striving for the best</span>
                                 </div>
-                                <a href="about" class="text-decoration-none btn-primary">About Us</a>
+                                <a href="about" class="text-decoration-none btn-secondary">About Us</a>
                             </div>
                         </div>
                     </div>
@@ -45,7 +45,7 @@
                                 <div class="sub-heading mb-5">
                                     <span>Helping others striving for the best</span>
                                 </div>
-                                <a href="about" class="text-decoration-none btn-primary">About Us</a>
+                                <a href="about" class="text-decoration-none btn-secondary">About Us</a>
                             </div>
                         </div>
                     </div>

@@ -30,6 +30,16 @@ body {
   /* BUTTONS =================== */
 }
 
+body ::-moz-selection {
+  color: var(--soft-white);
+  background: var(--color-primary);
+}
+
+body ::selection {
+  color: var(--soft-white);
+  background: var(--color-primary);
+}
+
 body .orn-half-circle-pink {
   height: 220px;
   background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(90%, #bc8799));

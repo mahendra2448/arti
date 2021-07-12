@@ -1,11 +1,7 @@
 <div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show" id="sidebar">
     <div class="c-sidebar-brand d-lg-down-none">
-        <svg class="c-sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
-            <use xlink:href="{{ asset('img/brand/coreui.svg#full') }}"></use>
-        </svg>
-        <svg class="c-sidebar-brand-minimized" width="46" height="46" alt="CoreUI Logo">
-            <use xlink:href="{{ asset('img/brand/coreui.svg#signet') }}"></use>
-        </svg>
+        <img class="c-sidebar-brand-full" src="{{ asset('img/brand/ARTI-logo.png') }}" height="40" alt="ARTI Logo">
+        <img class="c-sidebar-brand-minimized" src="{{ asset('img/brand/ARTI-icon.png') }}" height="40" alt="ARTI Logo">
     </div><!--c-sidebar-brand-->
 
     <ul class="c-sidebar-nav">
