@@ -461,5 +461,35 @@
     </div>
 
 </main>
+<!-- Modal -->
+<div class="modal fade" id="publicationModal" tabindex="-1" role="dialog" aria-labelledby="publicationModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content rounded">
+            <div class="modal-body px-4 py-5">                    
+                <div class="main-content text-center">  
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <form action="#">
+                        <h5><i class="fas fa-lock"></i> File ini dilindungi.</h5>
+                        <p class="mb-4">Untuk mengunduh file ini harap masukkan alamat email Anda. File akan dikirimkan melalui email setelah disetujui oleh tim kami.</p>
+                        <div class="form-group px-4">
+                            <input id="filename" type="text" class="form-control" hidden>
+                            <input type="email" class="form-control text-center" placeholder="Ketik email Anda" required>
+                        </div>
+                        <div class="form-group mb-0">
+                            <div class="mx-auto">
+                                <button type="submit" class="btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
    
 @endsection

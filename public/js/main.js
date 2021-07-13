@@ -92,6 +92,11 @@ $(function(){
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()
 })
+// request Publikasi's file
+$('.title a').on('click', function(){
+    var fileTitle = $(this).data('title')
+    $('input#filename').val(fileTitle)
+})
 // Carousel delay
 $('.carousel').carousel({
     interval: 3000,
