@@ -12,6 +12,23 @@
     @stack('before-styles')
     <link href="{{ mix('css/backend.css') }}" rel="stylesheet">
     <livewire:styles />
+    <link rel="stylesheet" href="{{ asset('libs/toastr/toastr.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('libs/sweetalert2/sweetalert2.min.css') }}">
+    <style>
+        label {font-weight: bold;}
+        label i{font-weight: normal;}
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance:textfield;
+        }
+        a.c-active i {color: #f9b115 !important}
+    </style>
     @stack('after-styles')
 </head>
 <body class="c-app">
@@ -41,6 +58,9 @@
     <script src="{{ mix('js/vendor.js') }}"></script>
     <script src="{{ mix('js/backend.js') }}"></script>
     <livewire:scripts />
+    <script src="{{ asset('libs/sweetalert2/sweetalert2.min.js') }}"></script>
+    <script src="{{ asset('libs/toastr/toastr.min.js') }}"></script>
     @stack('after-scripts')
+    @toastr_render
 </body>
 </html>
