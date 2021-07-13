@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePasswordHistoriesTable extends Migration
+class CreateTHomeExpsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreatePasswordHistoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('password_histories', function (Blueprint $table) {
+        Schema::create('t__home_exps', function (Blueprint $table) {
             $table->id();
-            $table->string('model_type');
-            $table->unsignedBigInteger('model_id');
-            $table->string('password');
+            $table->string('heading_text', 100);
+            $table->string('image', 200);
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreatePasswordHistoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('password_histories');
+        Schema::dropIfExists('t__home_exps');
     }
 }
