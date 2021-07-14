@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\DashboardController;
-use App\Http\Controllers\Backend\HomepageControllerController;
+use App\Http\Controllers\Backend\HomepageController;
 use Tabuna\Breadcrumbs\Trail;
 
 // All route names are prefixed with 'admin.'.
@@ -20,9 +20,16 @@ Route::group(['as' => 'home.'], function () {
             ->breadcrumbs(function (Trail $trail) {
                 $trail->push(__('Homepage'), route('admin.home.header.index'));
             });
+        Route::post('homepage/upload', [HomepageController::class, 'upload'])
+            ->name('upload');
+        Route::post('homepage/edit', [HomepageController::class, 'edit'])
+            ->name('edit');
         Route::put('homepage/update/{id}', [HomepageController::class, 'update'])
             ->name('update');
+        Route::get('homepage/delete/{id}', [HomepageController::class, 'delete'])
+            ->name('delete');
     });
+    
     Route::group(['as' => 'exp.'], function () {
         Route::get('homepage/experiences', [HomepageController::class, 'expIndex'])
             ->name('exp-index')

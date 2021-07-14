@@ -7,7 +7,7 @@
         <div class="col-md-12">
             <div class="card rounded shadow">
                 <div class="card-header bg-gradient-dark text-light mb-3">
-                    <h3 class="card-title mb-0">@lang('Welcome back :Name !', ['name' => $logged_in_user->name])</h3>
+                    <h3 class="card-title mb-0">@lang('Welcome back, :Name !', ['name' => $logged_in_user->name])</h3>
                 </div>
                 <div class="card-body">
                     <div class="row">

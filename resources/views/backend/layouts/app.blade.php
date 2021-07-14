@@ -12,6 +12,7 @@
     @stack('before-styles')
     <link href="{{ mix('css/backend.css') }}" rel="stylesheet">
     <livewire:styles />
+    <link rel="stylesheet" href="{{ asset('libs/DataTables/dataTables.min.css') }}">
     <link rel="stylesheet" href="{{ asset('libs/toastr/toastr.min.css') }}">
     <link rel="stylesheet" href="{{ asset('libs/sweetalert2/sweetalert2.min.css') }}">
     <style>
@@ -28,6 +29,19 @@
             -moz-appearance:textfield;
         }
         a.c-active i {color: #f9b115 !important}
+        .custom-upload label[for="foto"], label[for="editfoto"] {
+            background-color: #3D4045;
+            color: #fafafa;
+            padding: .5rem .8rem;
+            margin-bottom: 0;
+            border-radius: .2rem;
+            cursor: pointer;
+            -webkit-transition: all .2s ease-in;
+            transition: all .2s ease-in;
+        }
+        .custom-upload label[for="foto"]:hover, label[for="editfoto"]:hover {
+            background-color: #9b9b9b;
+        }
     </style>
     @stack('after-styles')
 </head>
@@ -58,8 +72,12 @@
     <script src="{{ mix('js/vendor.js') }}"></script>
     <script src="{{ mix('js/backend.js') }}"></script>
     <livewire:scripts />
+    <script src="//cdn.ckeditor.com/4.16.1/basic/ckeditor.js"></script>
+    <script src="{{ asset('libs/DataTables/dataTables.min.js') }}"></script>
     <script src="{{ asset('libs/sweetalert2/sweetalert2.min.js') }}"></script>
     <script src="{{ asset('libs/toastr/toastr.min.js') }}"></script>
+    <script src="{{ asset('js/backmain.js') }}"></script>
+    <script src="{{ asset('js/confirmDelete.js') }}"></script>
     @stack('after-scripts')
     @toastr_render
 </body>
