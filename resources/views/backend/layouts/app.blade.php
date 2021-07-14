@@ -14,7 +14,6 @@
     <livewire:styles />
     <link rel="stylesheet" href="{{ asset('libs/DataTables/dataTables.min.css') }}">
     <link rel="stylesheet" href="{{ asset('libs/toastr/toastr.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('libs/sweetalert2/sweetalert2.min.css') }}">
     <style>
         label {font-weight: bold;}
         label i{font-weight: normal;}
@@ -74,7 +73,6 @@
     <livewire:scripts />
     <script src="//cdn.ckeditor.com/4.16.1/basic/ckeditor.js"></script>
     <script src="{{ asset('libs/DataTables/dataTables.min.js') }}"></script>
-    <script src="{{ asset('libs/sweetalert2/sweetalert2.min.js') }}"></script>
     <script src="{{ asset('libs/toastr/toastr.min.js') }}"></script>
     <script src="{{ asset('js/backmain.js') }}"></script>
     <script src="{{ asset('js/confirmDelete.js') }}"></script>
