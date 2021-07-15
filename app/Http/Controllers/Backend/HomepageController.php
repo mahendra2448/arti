@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\T_Home;
+use App\Models\T_HomeDesc;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Database\QueryException;
@@ -16,8 +17,10 @@ class HomepageController extends Controller {
 
     public function index() {        
         $homeset    = T_Home::latest('created_at')->get();        
+        $homedesc   = T_HomeDesc::first();        
         $rows       = [
             'home'      =>$homeset,
+            'desc'      =>$homedesc,
         ];
         return view('backend.homepage', $rows);
     } 
@@ -53,7 +56,6 @@ class HomepageController extends Controller {
             return redirect()->back();
         }
     }
-
     public function edit(Request $req){
         $csrf   = $req->csrf;
         $id     = $req->id;
@@ -141,5 +143,26 @@ class HomepageController extends Controller {
         T_Home::where('id',$id)->forceDelete();  // hapus dari row db
     
         return redirect()->back();
+    }
+
+    
+    public function updateDesc(Request $req) {
+        $req->validate([
+            'desc_one'  => 'required',
+            'desc_two'  => 'required'
+        ]);
+        try {
+            T_HomeDesc::where('id',$req->id)->update([
+                'desc_one'  => $req->desc_one,
+                'desc_two'  => $req->desc_two
+            ]);
+                    
+            toastr()->success('Description successfully updated.');
+            return redirect()->route('admin.home.header.index');
+        } catch (QueryException $e) {
+            $msg = $e->getPrevious()->getMessage();
+            toastr()->error($msg, 'Error!');
+            return redirect()->back();
+        }
     }
 }

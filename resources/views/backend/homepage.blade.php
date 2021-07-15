@@ -114,4 +114,32 @@
         </div>
     </div>
 </div>
+
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-5">
+                <h4 class="card-title mb-0">Homepage Description</h4>
+            </div>
+        </div>
+        <div class="row mt-4 mb-4">
+            <div class="col-md-8">
+                <form action="{{ route('admin.home.header.desc.update', ['id'=>$desc->id]) }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @method('PUT')
+                    <div class="form-group">
+                        <label for="desc_one">Description 1</label>
+                        <textarea name="desc_one" id="desc_one" class="form-control descCK" required>{!!$desc->desc_one!!}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="desc_two">Description 2</label>
+                        <textarea name="desc_two" id="desc_two" class="form-control descCK" required>{!!$desc->desc_two!!}</textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success float-right"><i class="fas fa-sync mr-2"></i>Update</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
 @endsection

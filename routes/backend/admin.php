@@ -27,7 +27,9 @@ Route::group(['as' => 'home.'], function () {
         Route::put('homepage/update/{id}', [HomepageController::class, 'update'])
             ->name('update');
         Route::get('homepage/delete/{id}', [HomepageController::class, 'delete'])
-            ->name('delete');
+        ->name('delete');
+        Route::put('homepage/desc/update/{id}', [HomepageController::class, 'updateDesc'])
+            ->name('desc.update');
     });
     
     Route::group(['as' => 'exp.'], function () {
