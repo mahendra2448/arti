@@ -23,25 +23,21 @@
                 :text="__('Homepage')" />
 
             <ul class="c-sidebar-nav-dropdown-items">
-                <li class="c-sidebar-nav-item ml-3">
+                <li class="c-sidebar-nav-item ml-2">
                     <x-utils.link
-                        class="c-sidebar-nav-link"
-                        :href="route('admin.home.header.index')"
-                        :active="activeClass(Route::is('admin.home.header.index'), 'c-active text-warning font-weight-bold')"
-                        icon="c-sidebar-nav-icon fas fa-sync"
-                        :text="__('Update Header')" />
+                    class="c-sidebar-nav-link"
+                    :href="route('admin.home.header.index')"
+                    :active="activeClass(Route::is('admin.home.header.index'), 'c-active text-warning font-weight-bold')"
+                    icon="c-sidebar-nav-icon fas fa-sync"
+                    :text="__('Update Header')" />
+                </li>
+                <li class="c-sidebar-nav-item ml-2">
                     <x-utils.link
                         class="c-sidebar-nav-link"
                         :href="route('admin.home.exp.exp-index')"
                         :active="activeClass(Route::is('admin.home.exp.exp-index'), 'c-active text-warning font-weight-bold')"
                         icon="c-sidebar-nav-icon fas fa-th"
-                        :text="__('Experiences Thumbnails')" />
-                    <x-utils.link
-                        class="c-sidebar-nav-link"
-                        :href="route('admin.home.testi.testi-index')"
-                        :active="activeClass(Route::is('admin.home.testi.testi-index'), 'c-active text-warning font-weight-bold')"
-                        icon="c-sidebar-nav-icon far fa-comment-dots"
-                        :text="__('Testimonials')" />
+                        :text="__('Experiences & Testimonial')" />
                 </li>
             </ul>
         </li>

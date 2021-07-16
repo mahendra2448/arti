@@ -38,13 +38,13 @@ Route::group(['as' => 'home.'], function () {
             ->breadcrumbs(function (Trail $trail) {
                 $trail->push(__('Experiences Thumbnails'), route('admin.home.exp.exp-index'));
             });
-        Route::post('homepage/exp/upload', [HomepageController::class, 'uploadExp'])
+        Route::post('homepage/experiences/upload', [HomepageController::class, 'uploadExp'])
             ->name('exp-upload');
-        Route::post('homepage/exp/edit', [HomepageController::class, 'editExp'])
+        Route::post('homepage/experiences/edit', [HomepageController::class, 'editExp'])
             ->name('exp-edit');
-        Route::put('homepage/exp/update/{id}', [HomepageController::class, 'updateExp'])
+        Route::put('homepage/experiences/update/{id}', [HomepageController::class, 'updateExp'])
             ->name('exp-update');
-        Route::get('homepage/exp/delete/{id}', [HomepageController::class, 'deleteExp'])
+        Route::get('homepage/experiences/delete/{id}', [HomepageController::class, 'deleteExp'])
             ->name('exp-delete');
     });
     Route::group(['as' => 'testi.'], function () {
