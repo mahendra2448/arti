@@ -51,15 +51,15 @@ Route::group(['as' => 'home.'], function () {
         Route::get('homepage/testimonials', [HomepageController::class, 'testiIndex'])
             ->name('testi-index')
             ->breadcrumbs(function (Trail $trail) {
-                $trail->push(__('Experiences Thumbnails'), route('admin.home.testi.testi-index'));
+                $trail->push(__('Testimonials'), route('admin.home.testi.testi-index'));
             });
-        Route::post('homepage/testi/upload', [HomepageController::class, 'uploadTesti'])
+        Route::post('homepage/testimonials/upload', [HomepageController::class, 'uploadTesti'])
             ->name('testi-upload');
-        Route::post('homepage/testi/edit', [HomepageController::class, 'editTesti'])
+        Route::post('homepage/testimonials/edit', [HomepageController::class, 'editTesti'])
             ->name('testi-edit');
-        Route::put('homepage/testi/update/{id}', [HomepageController::class, 'updateTesti'])
+        Route::put('homepage/testimonials/update/{id}', [HomepageController::class, 'updateTesti'])
             ->name('testi-update');
-        Route::get('homepage/testi/delete/{id}', [HomepageController::class, 'deleteTesti'])
+        Route::get('homepage/testimonials/delete/{id}', [HomepageController::class, 'deleteTesti'])
             ->name('testi-delete');
     });
 });

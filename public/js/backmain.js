@@ -1,5 +1,6 @@
 $(function() {
     $('#commonTable').DataTable();
+    $('#commonTable2').DataTable();
 });
 
 $(function() { // Custom input type=file

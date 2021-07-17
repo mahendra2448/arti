@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\T_Home;
 use App\Models\T_HomeDesc;
 use App\Models\T_HomeExp;
+use App\Models\T_HomeTesti;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Database\QueryException;
@@ -171,7 +172,7 @@ class HomepageController extends Controller {
         $rows       = [
             'exp'      =>$homeset,
         ];
-        return view('backend.homepage.exptesti', $rows);
+        return view('backend.homepage.exp', $rows);
     } 
     public function uploadExp(Request $req) {
         $req->validate([
@@ -282,6 +283,97 @@ class HomepageController extends Controller {
         
         File::delete(public_path($rows->image)); // hapus file image
         T_HomeExp::where('id',$id)->forceDelete();  // hapus dari row db
+    
+        return redirect()->back();
+    }
+
+    
+    public function testiIndex() {
+        $testi  = T_HomeTesti::get();  
+        $rows   = [
+            'testi' => $testi,
+        ];
+        return view('backend.homepage.testi', $rows);
+    } 
+    public function uploadTesti(Request $req) {
+        $req->validate([
+            'name'      => 'required',
+            'position'  => 'required',
+            'desc'      => 'required',
+        ]);
+        try {
+            T_HomeTesti::create([
+                'name'      => $req->name,
+                'position'  => $req->position,
+                'desc'      => $req->desc,
+            ]);  
+            toastr()->success('New testimonial successfully added.');
+            return redirect()->route('admin.home.testi.testi-index');
+        } catch (QueryException $e) {
+            $msg = $e->getPrevious()->getMessage();
+            toastr()->error($msg, 'Error!');
+            return redirect()->back();
+        }
+    }
+    public function editTesti(Request $req){
+        $csrf   = $req->csrf;
+        $id     = $req->id;
+        $data   = T_HomeTesti::where('id', $id)->get();
+        $toEdit = $this->setup_editTesti($data,$csrf);
+
+        return response()->json($toEdit);
+    }
+    private function setup_editTesti($toEdit,$csrf){
+        $result = '';
+        foreach($toEdit as $t){
+            $result .= '
+            <div class="container">
+                <h5 class="float-right text-info">ID: '.$t->id.'</h5>
+                <form action="'. route('admin.home.testi.testi-update', ['id'=>$t->id]) .'" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="_token" value="'.$csrf.'">
+                    <input type="hidden" name="_method" value="PUT">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input id="name" class="form-control" type="text" name="name" required value="'.$t->name.'">
+                    </div>
+                    <div class="form-group">
+                        <label for="position">Position</label>
+                        <input id="position" class="form-control" type="text" name="position" required value="'.$t->position.'">
+                    </div>
+                    <div class="form-group">
+                        <label for="desc">Description</label>
+                        <textarea name="desc" id="desc_one" class="form-control descCK" required>'.$t->desc.'</textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success float-right"><i class="fas fa-sync mr-2"></i>Update</button>
+                </form>
+            </div>';
+        }
+
+        return $result;
+    }
+    public function updateTesti(Request $req) {
+        $req->validate([
+            'name'      => 'required',
+            'position'  => 'required',
+            'desc'      => 'required',
+        ]);
+        try {
+            T_HomeTesti::where('id',$req->id)->update([
+                'name'      => $req->name,
+                'position'  => $req->position,
+                'desc'      => $req->desc,
+            ]);  
+            toastr()->success('Testimonial successfully updated.');
+            return redirect()->route('admin.home.testi.testi-index');
+        } catch (QueryException $e) {
+            $msg = $e->getPrevious()->getMessage();
+            toastr()->error($msg, 'Error!');
+            return redirect()->back();
+        }
+    }
+    public function deleteTesti($id){
+        $rows = T_HomeTesti::where('id',$id)->first();
+        T_HomeTesti::where('id',$id)->forceDelete();  // hapus dari row db
     
         return redirect()->back();
     }

@@ -37,7 +37,15 @@
                         :href="route('admin.home.exp.exp-index')"
                         :active="activeClass(Route::is('admin.home.exp.exp-index'), 'c-active text-warning font-weight-bold')"
                         icon="c-sidebar-nav-icon fas fa-th"
-                        :text="__('Experiences & Testimonial')" />
+                        :text="__('Experiences')" />
+                </li>
+                <li class="c-sidebar-nav-item ml-2">
+                    <x-utils.link
+                        class="c-sidebar-nav-link"
+                        :href="route('admin.home.testi.testi-index')"
+                        :active="activeClass(Route::is('admin.home.testi.testi-index'), 'c-active text-warning font-weight-bold')"
+                        icon="c-sidebar-nav-icon fas fa-comment"
+                        :text="__('Testimonial')" />
                 </li>
             </ul>
         </li>
