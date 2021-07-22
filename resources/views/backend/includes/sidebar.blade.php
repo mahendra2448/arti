@@ -8,20 +8,20 @@
         <li class="c-sidebar-nav-title">Main Menu</li>
         <li class="c-sidebar-nav-item">
             <x-utils.link
-                class="c-sidebar-nav-link"
-                :href="route('admin.dashboard')"
-                :active="activeClass(Route::is('admin.dashboard'), 'c-active text-warning font-weight-bold')"
-                icon="c-sidebar-nav-icon cil-speedometer"
-                :text="__('Dashboard')" />
+            class="c-sidebar-nav-link"
+            :href="route('admin.dashboard')"
+            :active="activeClass(Route::is('admin.dashboard'), 'c-active text-warning font-weight-bold')"
+            icon="c-sidebar-nav-icon cil-speedometer"
+            :text="__('Dashboard')" />
         </li>
         
         <li class="c-sidebar-nav-dropdown {{ activeClass(Route::is('admin.home*'), 'c-open c-show') }}">
             <x-utils.link
-                href="#"
-                icon="c-sidebar-nav-icon fas fa-bars"
-                class="c-sidebar-nav-dropdown-toggle"
-                :text="__('Homepage')" />
-
+            href="#"
+            icon="c-sidebar-nav-icon fas fa-bars"
+            class="c-sidebar-nav-dropdown-toggle"
+            :text="__('Homepage')" />
+            
             <ul class="c-sidebar-nav-dropdown-items">
                 <li class="c-sidebar-nav-item ml-2">
                     <x-utils.link
@@ -33,39 +33,48 @@
                 </li>
                 <li class="c-sidebar-nav-item ml-2">
                     <x-utils.link
-                        class="c-sidebar-nav-link"
-                        :href="route('admin.home.exp.exp-index')"
-                        :active="activeClass(Route::is('admin.home.exp.exp-index'), 'c-active text-warning font-weight-bold')"
-                        icon="c-sidebar-nav-icon fas fa-th"
-                        :text="__('Experiences')" />
+                    class="c-sidebar-nav-link"
+                    :href="route('admin.home.exp.exp-index')"
+                    :active="activeClass(Route::is('admin.home.exp.exp-index'), 'c-active text-warning font-weight-bold')"
+                    icon="c-sidebar-nav-icon fas fa-th"
+                    :text="__('Experiences')" />
                 </li>
                 <li class="c-sidebar-nav-item ml-2">
                     <x-utils.link
-                        class="c-sidebar-nav-link"
-                        :href="route('admin.home.testi.testi-index')"
-                        :active="activeClass(Route::is('admin.home.testi.testi-index'), 'c-active text-warning font-weight-bold')"
-                        icon="c-sidebar-nav-icon fas fa-comment"
-                        :text="__('Testimonial')" />
+                    class="c-sidebar-nav-link"
+                    :href="route('admin.home.testi.testi-index')"
+                    :active="activeClass(Route::is('admin.home.testi.testi-index'), 'c-active text-warning font-weight-bold')"
+                    icon="c-sidebar-nav-icon fas fa-comment"
+                    :text="__('Testimonial')" />
                 </li>
             </ul>
         </li>
         <li class="c-sidebar-nav-item">
             <x-utils.link
-                class="c-sidebar-nav-link"
-                :href="route('admin.about.index')"
-                :active="activeClass(Route::is('admin.about.index'), 'c-active text-warning font-weight-bold')"
-                icon="c-sidebar-nav-icon cil-info"
-                :text="__('About Us - Page')" />
+            class="c-sidebar-nav-link"
+            :href="route('admin.about.index')"
+            :active="activeClass(Route::is('admin.about.index'), 'c-active text-warning font-weight-bold')"
+            icon="c-sidebar-nav-icon cil-info"
+            :text="__('About Us - Page')" />
         </li>
         <li class="c-sidebar-nav-item">
             <x-utils.link
-                class="c-sidebar-nav-link"
-                :href="route('admin.approach.index')"
-                :active="activeClass(Route::is('admin.approach.index'), 'c-active text-warning font-weight-bold')"
-                icon="c-sidebar-nav-icon cil-thumb-up"
-                :text="__('Our Approach - Page')" />
+            class="c-sidebar-nav-link"
+            :href="route('admin.approach.index')"
+            :active="activeClass(Route::is('admin.approach.index'), 'c-active text-warning font-weight-bold')"
+            icon="c-sidebar-nav-icon cil-thumb-up"
+            :text="__('Our Approach - Page')" />
         </li>
-
+        
+        <li class="c-sidebar-nav-title">Advanced</li>
+        <li class="c-sidebar-nav-item">
+            <x-utils.link
+            class="c-sidebar-nav-link"
+            :href="route('admin.footer.index')"
+            :active="activeClass(Route::is('admin.footer.index'), 'c-active text-warning font-weight-bold')"
+            icon="c-sidebar-nav-icon cil-notes"
+            :text="__('Footer')" />
+        </li>
         @if (
             $logged_in_user->hasAllAccess() ||
             (
