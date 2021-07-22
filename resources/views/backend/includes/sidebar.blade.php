@@ -49,6 +49,14 @@
                 </li>
             </ul>
         </li>
+        <li class="c-sidebar-nav-item">
+            <x-utils.link
+                class="c-sidebar-nav-link"
+                :href="route('admin.about.index')"
+                :active="activeClass(Route::is('admin.about.index'), 'c-active text-warning font-weight-bold')"
+                icon="c-sidebar-nav-icon cil-info"
+                :text="__('About Us - Page')" />
+        </li>
 
         @if (
             $logged_in_user->hasAllAccess() ||

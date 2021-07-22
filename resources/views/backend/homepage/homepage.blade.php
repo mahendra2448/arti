@@ -127,15 +127,21 @@
                 <form action="{{ route('admin.home.header.desc.update', ['id'=>$desc->id]) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
-                    <div class="form-group">
-                        <label for="desc_one">Description 1</label>
-                        <textarea name="desc_one" id="desc_one" class="form-control descCK" required>{!!$desc->desc_one!!}</textarea>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="desc_one">Description 1</label>
+                                <textarea name="desc_one" id="desc_one" class="form-control descCK" required>{!!$desc->desc_one!!}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="desc_two">Description 2</label>
+                                <textarea name="desc_two" id="desc_two" class="form-control descCK" required>{!!$desc->desc_two!!}</textarea>
+                            </div>
+                            <button type="submit" class="btn btn-success float-right"><i class="fas fa-sync mr-2"></i>Update</button>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="desc_two">Description 2</label>
-                        <textarea name="desc_two" id="desc_two" class="form-control descCK" required>{!!$desc->desc_two!!}</textarea>
-                    </div>
-                    <button type="submit" class="btn btn-success float-right"><i class="fas fa-sync mr-2"></i>Update</button>
                 </form>
             </div>
 

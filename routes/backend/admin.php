@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\HomepageController;
 use Tabuna\Breadcrumbs\Trail;
@@ -61,6 +62,41 @@ Route::group(['as' => 'home.'], function () {
             ->name('testi-update');
         Route::get('homepage/testimonials/delete/{id}', [HomepageController::class, 'deleteTesti'])
             ->name('testi-delete');
+    });
+});
+
+Route::group(['as' => 'about.'], function () {
+    Route::get('about', [AboutController::class, 'index'])
+        ->name('index')
+        ->breadcrumbs(function (Trail $trail) {
+            $trail->push(__('About Us - Page'), route('admin.about.index'));
+        });
+    Route::put('about/update/{id}', [AboutController::class, 'updates'])
+    ->name('updates');
+    Route::put('about/vis/update/{id}', [AboutController::class, 'updateVis'])
+    ->name('vis.updates');
+    Route::put('about/mis/update/{id}', [AboutController::class, 'updateMis'])
+    ->name('mis.updates');
+    
+    Route::group(['as' => 'prinspes.'], function () {
+        Route::post('about/prinsip/upload', [AboutController::class, 'uploadPrinsip'])
+            ->name('prins-upload');
+        Route::get('about/prinsip/delete/{id}', [AboutController::class, 'deletePrinsip'])
+        ->name('prins-delete');
+        Route::post('about/spes/upload', [AboutController::class, 'uploadSpes'])
+            ->name('spes-upload');
+        Route::get('about/spes/delete/{id}', [AboutController::class, 'deleteSpes'])
+        ->name('spes-delete');
+    });
+    Route::group(['as' => 'approach.'], function () {
+        Route::post('about/approach/upload', [AboutController::class, 'uploadAppr'])
+            ->name('appr-upload');
+        Route::post('about/edit', [AboutController::class, 'editAppr'])
+            ->name('appr-edit');
+        Route::put('about/approach/update/{id}', [AboutController::class, 'updateAppr'])
+            ->name('appr-update');
+        Route::get('about/approach/delete/{id}', [AboutController::class, 'deleteAppr'])
+            ->name('appr-delete');
     });
 });
 

@@ -28,7 +28,7 @@
             -moz-appearance:textfield;
         }
         a.c-active i {color: #f9b115 !important}
-        .custom-upload label[for="foto"], label[for="editfoto"] {
+        .custom-upload label {
             background-color: #3D4045;
             color: #fafafa;
             padding: .5rem .8rem;
@@ -38,9 +38,11 @@
             -webkit-transition: all .2s ease-in;
             transition: all .2s ease-in;
         }
-        .custom-upload label[for="foto"]:hover, label[for="editfoto"]:hover {
+        .custom-upload label:hover {
             background-color: #9b9b9b;
         }
+        ul {padding-inline-start: 0}
+        li {list-style-type: none}
     </style>
     @stack('after-styles')
 </head>

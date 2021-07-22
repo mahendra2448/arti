@@ -85,9 +85,9 @@ class HomepageController extends Controller {
                     </div>
                     <small class="text-danger"><em>(Ukuran file tidak boleh lebih dari 2MB)</em></small>
                     <div class="custom-upload">
-                        <input type="file" id="editfoto" name="image" class="form-control" accept="image/jpg, image/jpeg, image/png, image/webp" hidden>
-                        <label for="editfoto">Choose file...</label>
-                        <span id="file-edit">'.$t->image.'</span>
+                        <input type="file" id="editfoto'.$t->id.'" name="image" class="form-control" accept="image/jpg, image/jpeg, image/png, image/webp" hidden>
+                        <label for="editfoto'.$t->id.'">Choose file...</label>
+                        <span id="file-edit'.$t->id.'">'.$t->image.'</span>
                     </div>
                     <button type="submit" class="btn btn-success float-right"><i class="fas fa-sync mr-2"></i>Update</button>
                 </form>
@@ -227,9 +227,9 @@ class HomepageController extends Controller {
                     </div>
                     <small class="text-danger"><em>(Ukuran file tidak boleh lebih dari 2MB)</em></small>
                     <div class="custom-upload">
-                        <input type="file" id="editfoto" name="image" class="form-control" accept="image/jpg, image/jpeg, image/png, image/webp" hidden>
-                        <label for="editfoto">Choose file...</label>
-                        <span id="file-edit">'.$t->image.'</span>
+                        <input type="file" id="editfoto'.$t->id.'" name="image" class="form-control" accept="image/jpg, image/jpeg, image/png, image/webp" hidden>
+                        <label for="editfoto'.$t->id.'">Choose file...</label>
+                        <span id="file-edit'.$t->id.'">'.$t->image.'</span>
                     </div>
                     <button type="submit" class="btn btn-success float-right"><i class="fas fa-sync mr-2"></i>Update</button>
                 </form>

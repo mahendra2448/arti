@@ -3,47 +3,36 @@ $(function() {
     $('#commonTable2').DataTable();
 });
 
-$(function() { // Custom input type=file
-    $('input#foto').on('change', function(){  // for first upload
-        $('#file-chosen').text(this.files[0].name);
-        if(this.files[0].size > 2048000) {   
-            Swal.fire({ //trigger Swal to announce user
-                title: "Oops..!",
-                text: "File kamu melebihi batas 2MB.",
-                type: 'error',
-                icon: 'warning',
-                width: 450,
-                confirmButtonText: "Okay",
-                allowOutsideClick: false
-            });
-            $('#file-chosen').text('No file chosen');
-        };
-    });
-})
-function editFile() { // Custom input type=file // for edit
-    $('input#editfoto').on('change', function(){  
-        $('#file-edit').text(this.files[0].name);
-        if(this.files[0].size > 2048000) {   
-            Swal.fire({ //trigger Swal to announce user
-                title: "Oops..!",
-                text: "File kamu melebihi batas 2MB.",
-                type: 'error',
-                icon: 'warning',
-                width: 450,
-                confirmButtonText: "Okay",
-                allowOutsideClick: false
-            });
-            $('#file-edit').text('No file chosen');
-        };
-    });
-}
-
 // CKEditor init
 $(function(){
     CKEDITOR.config.enterMode = 2 ; // replace <p> with <br>
     CKEDITOR.config.ShiftEnterMode = 1; // adding <p> tag
     CKEDITOR.replace('descCK');
     CKEDITOR.replaceAll('descCK'); 
+})
+
+$(function() { // Custom input type=file
+    $(document).on('click', '.custom-upload label', function(){
+        var type = $(this).data('up');
+        var editID  = 'input#foto-'+type;
+        var labelID = '#file-chosen-'+type;
+
+        $(editID).on('change', function(){  // for new upload
+            $(labelID).text(this.files[0].name);
+            if(this.files[0].size > 2048000) {   
+                Swal.fire({ //trigger Swal to announce user
+                    title: "Oops..!",
+                    text: "File kamu melebihi batas 2MB.",
+                    type: 'error',
+                    icon: 'warning',
+                    width: 450,
+                    confirmButtonText: "Okay",
+                    allowOutsideClick: false
+                });
+                $(labelID).text('No file chosen');
+            };
+        });
+    })
 })
 
 // Edit data by AJAX
@@ -68,10 +57,31 @@ $(document).on('click', '.btn-edit', function(){
             $('[data-toggle="tooltip"]').tooltip(); // init tooltip
             CKEDITOR.replaceAll('descCK');  // init CKEditor didalam modal
 
-            editFile();
+            editFile(id);
         }
     });
     $('#editRow').on('hidden.bs.modal', function (e) {
         $('#edit-body').html('');
     })
 });
+
+function editFile(id) { // Custom input type=file // for edit
+    var editID  = 'input#editfoto'+id;
+    var labelID = '#file-edit'+id;
+
+    $(editID).on('change', function(){  
+        $(labelID).text(this.files[0].name);
+        if(this.files[0].size > 2048000) {   
+            Swal.fire({ //trigger Swal to announce user
+                title: "Oops..!",
+                text: "File kamu melebihi batas 2MB.",
+                type: 'error',
+                icon: 'warning',
+                width: 450,
+                confirmButtonText: "Okay",
+                allowOutsideClick: false
+            });
+            $(labelID).text('No file chosen');
+        };
+    });
+}
