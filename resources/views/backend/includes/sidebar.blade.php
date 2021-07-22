@@ -57,6 +57,14 @@
                 icon="c-sidebar-nav-icon cil-info"
                 :text="__('About Us - Page')" />
         </li>
+        <li class="c-sidebar-nav-item">
+            <x-utils.link
+                class="c-sidebar-nav-link"
+                :href="route('admin.approach.index')"
+                :active="activeClass(Route::is('admin.approach.index'), 'c-active text-warning font-weight-bold')"
+                icon="c-sidebar-nav-icon cil-thumb-up"
+                :text="__('Our Approach - Page')" />
+        </li>
 
         @if (
             $logged_in_user->hasAllAccess() ||

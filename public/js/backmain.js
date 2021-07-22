@@ -13,9 +13,8 @@ $(function(){
 
 $(function() { // Custom input type=file
     $(document).on('click', '.custom-upload label', function(){
-        var type = $(this).data('up');
-        var editID  = 'input#foto-'+type;
-        var labelID = '#file-chosen-'+type;
+        var editID  = 'input#foto';
+        var labelID = '#file-chosen';
 
         $(editID).on('change', function(){  // for new upload
             $(labelID).text(this.files[0].name);
@@ -39,7 +38,7 @@ $(function() { // Custom input type=file
 $(document).on('click', '.btn-edit', function(){
     var base_url = window.location.origin+window.location.pathname; 
     var id  = $(this).data('id');
-
+    console.log(base_url)
     $.ajax({ // AJAX request
         headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
         url: base_url+'/edit',

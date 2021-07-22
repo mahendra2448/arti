@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\AboutController;
+use App\Http\Controllers\Backend\ApproachController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\HomepageController;
 use Tabuna\Breadcrumbs\Trail;
@@ -100,6 +101,26 @@ Route::group(['as' => 'about.'], function () {
     });
 });
 
+Route::group(['as' => 'approach.'], function () {
+    Route::get('approach', [ApproachController::class, 'index'])
+        ->name('index')
+        ->breadcrumbs(function (Trail $trail) {
+            $trail->push(__('Our Approach - Page'), route('admin.approach.index'));
+        });
+    Route::put('approach/update/{id}', [ApproachController::class, 'updates'])
+    ->name('updates');
+    
+    Route::group(['as' => 'method.'], function () {
+        Route::post('approach/method/upload', [ApproachController::class, 'uploadMet'])
+            ->name('met-upload');
+        Route::post('approach/edit', [ApproachController::class, 'editMet'])
+            ->name('met-edit');
+        Route::put('approach/method/update/{id}', [ApproachController::class, 'updateMet'])
+        ->name('met-update');
+        Route::get('approach/method/delete/{id}', [ApproachController::class, 'deleteMet'])
+        ->name('met-delete');
+    });
+});
 // Footer Section
 // Route::group(['as' => 'footer.'], function () {
 //     Route::group(['as' => 'partner.'], function () {

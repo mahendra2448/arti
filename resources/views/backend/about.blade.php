@@ -10,59 +10,53 @@
                 <h4 class="card-title mb-0"><i class="fas fa-align-left mr-2"></i> About Us - Update</h4>
             </div>
         </div>
-        <div class="row mt-4 mb-4">
-            <div class="col">
-                <div class="row">
-                    <div class="col-md-4">
-                            <form action="{{ route('admin.about.updates', ['id'=>$abt->id]) }}" method="POST" enctype="multipart/form-data">
-                                @csrf
-                                @method('PUT')
-                                <div class="form-group">
-                                    <label for="abt_desc">About</label>
-                                    <textarea name="abt_desc" id="abt_desc" class="form-control descCK" required>{!!$abt->abt_desc!!}</textarea>
-                                </div>
-                                <div class="custom-upload">
-                                    <input type="file" id="foto-abt" name="abt_image" class="form-control" accept="image/jpg, image/jpeg, image/png, image/webp" hidden>
-                                    <label for="foto-abt" data-up="abt">Choose file...</label>
-                                    <span id="file-chosen-abt">{{$abt->abt_image}}</span>
-                                </div>
-                                <button type="submit" class="btn btn-success float-right"><i class="fas fa-sync mr-2"></i>Update</button>
-                            </form>
-                        </div>
-                        <div class="col-md-4">
-                            <form action="{{ route('admin.about.vis.updates', ['id'=>$abtvis->id]) }}" method="POST" enctype="multipart/form-data">
-                                @csrf
-                                @method('PUT')
-                                <div class="form-group">
-                                    <label for="vis_desc">Vision</label>
-                                    <textarea name="vis_desc" id="vis_desc" class="form-control descCK" required>{!!$abtvis->vis_desc!!}</textarea>
-                                </div>
-                                <div class="custom-upload">
-                                    <input type="file" id="foto-vis" name="vis_image" class="form-control" accept="image/jpg, image/jpeg, image/png, image/webp" hidden>
-                                    <label for="foto-vis" data-up="vis">Choose file...</label>
-                                    <span id="file-chosen-vis">{{$abtvis->vis_image}}</span>
-                                </div>
-                                <button type="submit" class="btn btn-success float-right"><i class="fas fa-sync mr-2"></i>Update</button>
-                            </form>
-                        </div>
-                        <div class="col-md-4">
-                            <form action="{{ route('admin.about.mis.updates', ['id'=>$abtmis->id]) }}" method="POST" enctype="multipart/form-data">
-                                @csrf
-                                @method('PUT')
-                                <div class="form-group">
-                                    <label for="mis_desc">Mission</label>
-                                    <textarea name="mis_desc" id="mis_desc" class="form-control descCK" required>{!!$abtmis->mis_desc!!}</textarea>
-                                </div>
-                                <div class="custom-upload">
-                                    <input type="file" id="foto-mis" name="mis_image" class="form-control" accept="image/jpg, image/jpeg, image/png, image/webp" hidden>
-                                    <label for="foto-mis" data-up="mis">Choose file...</label>
-                                    <span id="file-chosen-mis">{{$abtmis->mis_image}}</span>
-                                </div>
-                                <button type="submit" class="btn btn-success float-right"><i class="fas fa-sync mr-2"></i>Update</button>
-                            </form>
-                        </div>
+        <div class="row my-4">
+            <div class="col-md-4">
+                <form action="{{ route('admin.about.updates', ['id'=>$abt->id]) }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @method('PUT')
+                    <div class="form-group">
+                        <label for="abt_desc">About</label>
+                        <textarea name="abt_desc" id="abt_desc" class="form-control descCK" required>{!!$abt->abt_desc!!}</textarea>
                     </div>
-
+                    <div class="custom-upload">
+                        <input type="file" id="foto-abt" name="abt_image" class="form-control" accept="image/jpg, image/jpeg, image/png, image/webp" hidden>
+                        <label for="foto-abt" data-up="abt">Choose file...</label>
+                        <span id="file-chosen-abt">{{$abt->abt_image}}</span>
+                    </div>
+                    <button type="submit" class="btn btn-success float-right"><i class="fas fa-sync mr-2"></i>Update</button>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <form action="{{ route('admin.about.vis.updates', ['id'=>$abtvis->id]) }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @method('PUT')
+                    <div class="form-group">
+                        <label for="vis_desc">Vision</label>
+                        <textarea name="vis_desc" id="vis_desc" class="form-control descCK" required>{!!$abtvis->vis_desc!!}</textarea>
+                    </div>
+                    <div class="custom-upload">
+                        <input type="file" id="foto-vis" name="vis_image" class="form-control" accept="image/jpg, image/jpeg, image/png, image/webp" hidden>
+                        <label for="foto-vis" data-up="vis">Choose file...</label>
+                        <span id="file-chosen-vis">{{$abtvis->vis_image}}</span>
+                    </div>
+                    <button type="submit" class="btn btn-success float-right"><i class="fas fa-sync mr-2"></i>Update</button>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <form action="{{ route('admin.about.mis.updates', ['id'=>$abtmis->id]) }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @method('PUT')
+                    <div class="form-group">
+                        <label for="mis_desc">Mission</label>
+                        <textarea name="mis_desc" id="mis_desc" class="form-control descCK" required>{!!$abtmis->mis_desc!!}</textarea>
+                    </div>
+                    <div class="custom-upload">
+                        <input type="file" id="foto-mis" name="mis_image" class="form-control" accept="image/jpg, image/jpeg, image/png, image/webp" hidden>
+                        <label for="foto-mis" data-up="mis">Choose file...</label>
+                        <span id="file-chosen-mis">{{$abtmis->mis_image}}</span>
+                    </div>
+                    <button type="submit" class="btn btn-success float-right"><i class="fas fa-sync mr-2"></i>Update</button>
                 </form>
             </div>
         </div>

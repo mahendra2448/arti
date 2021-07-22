@@ -81,7 +81,7 @@ class AboutController extends Controller {
         try {
             try {
                 if ($req->vis_image) {
-                    $imageName  = 'bg-'.date('dmYhis.').$req->vis_image->extension();
+                    $imageName  = 'visi-'.date('dmYhis.').$req->vis_image->extension();
                     $imageSave  = storage_path('app/public/kit/images/'.$imageName);
                     $imagePath  = '/storage/kit/images/'.$imageName;
                     Image::make($req->vis_image)->save($imageSave,70); // image quality set to 70 (range 0-100) to reduce size
@@ -120,7 +120,7 @@ class AboutController extends Controller {
         try {
             try {
                 if ($req->mis_image) {
-                    $imageName  = 'bg-'.date('dmYhis.').$req->mis_image->extension();
+                    $imageName  = 'misi-'.date('dmYhis.').$req->mis_image->extension();
                     $imageSave  = storage_path('app/public/kit/images/'.$imageName);
                     $imagePath  = '/storage/kit/images/'.$imageName;
                     Image::make($req->mis_image)->save($imageSave,70); // image quality set to 70 (range 0-100) to reduce size

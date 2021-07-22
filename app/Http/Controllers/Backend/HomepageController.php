@@ -18,7 +18,7 @@ use File;
 class HomepageController extends Controller {
 
     public function index() {
-        $homeset    = T_Home::latest('created_at')->get();        
+        $homeset    = T_Home::get();        
         $homedesc   = T_HomeDesc::first();        
         $rows       = [
             'home'      =>$homeset,
