@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\ApproachController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\ExperienceController;
 use App\Http\Controllers\Backend\FooterController;
 use App\Http\Controllers\Backend\HomepageController;
 use App\Http\Controllers\Backend\TeamController;
@@ -154,6 +155,69 @@ Route::group(['as' => 'team.'], function () {
         ->name('ass-update');
         Route::get('team/assist/delete/{id}', [TeamController::class, 'deleteAss'])
         ->name('ass-delete');
+    });
+});
+
+Route::group(['as' => 'exp.'], function () {
+    Route::group(['as' => 'penelitian.'], function () {
+        Route::get('exp/penelitian', [ExperienceController::class, 'indexResearch'])
+            ->name('index')
+            ->breadcrumbs(function (Trail $trail) {
+                $trail->push(__('Penelitian'), route('admin.exp.penelitian.index'));
+            });    
+        Route::post('exp/penelitian/upload', [ExperienceController::class, 'uploadResearch'])
+            ->name('penelitian-upload');
+        Route::post('exp/penelitian/edit', [ExperienceController::class, 'editResearch'])
+            ->name('penelitian-edit');
+        Route::put('exp/penelitian/update/{id}', [ExperienceController::class, 'updateResearch'])
+        ->name('penelitian-update');
+        Route::get('exp/penelitian/delete/{id}', [ExperienceController::class, 'deleteResearch'])
+        ->name('penelitian-delete');
+    });
+    Route::group(['as' => 'pendidikan.'], function () {
+        Route::get('exp/pendidikan', [ExperienceController::class, 'indexStudy'])
+            ->name('index')
+            ->breadcrumbs(function (Trail $trail) {
+                $trail->push(__('Pendidikan & Pelatihan'), route('admin.exp.pendidikan.index'));
+            });    
+        Route::post('exp/pendidikan/upload', [ExperienceController::class, 'uploadStudy'])
+            ->name('pendidikan-upload');
+        Route::post('exp/pendidikan/edit', [ExperienceController::class, 'editStudy'])
+            ->name('pendidikan-edit');
+        Route::put('exp/pendidikan/update/{id}', [ExperienceController::class, 'updateStudy'])
+        ->name('pendidikan-update');
+        Route::get('exp/pendidikan/delete/{id}', [ExperienceController::class, 'deleteStudy'])
+        ->name('pendidikan-delete');
+    });
+    Route::group(['as' => 'publikasi.'], function () {
+        Route::get('exp/publikasi', [ExperienceController::class, 'indexPub'])
+            ->name('index')
+            ->breadcrumbs(function (Trail $trail) {
+                $trail->push(__('Publikasi'), route('admin.exp.publikasi.index'));
+            });    
+        Route::post('exp/publikasi/upload', [ExperienceController::class, 'uploadPub'])
+            ->name('publikasi-upload');
+        Route::post('exp/publikasi/edit', [ExperienceController::class, 'editPub'])
+            ->name('publikasi-edit');
+        Route::put('exp/publikasi/update/{id}', [ExperienceController::class, 'updatePub'])
+        ->name('publikasi-update');
+        Route::get('exp/publikasi/delete/{id}', [ExperienceController::class, 'deletePub'])
+        ->name('publikasi-delete');
+    });
+    Route::group(['as' => 'partners.'], function () {
+        Route::get('exp/partners', [ExperienceController::class, 'indexPartner'])
+            ->name('index')
+            ->breadcrumbs(function (Trail $trail) {
+                $trail->push(__('partners'), route('admin.exp.partners.index'));
+            });    
+        Route::post('exp/partners/upload', [ExperienceController::class, 'uploadPartner'])
+            ->name('partners-upload');
+        Route::post('exp/partners/edit', [ExperienceController::class, 'editPartner'])
+            ->name('partners-edit');
+        Route::put('exp/partners/update/{id}', [ExperienceController::class, 'updatePartner'])
+        ->name('partners-update');
+        Route::get('exp/partners/delete/{id}', [ExperienceController::class, 'deletePartner'])
+        ->name('partners-delete');
     });
 });
 

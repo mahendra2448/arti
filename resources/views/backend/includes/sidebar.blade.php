@@ -54,7 +54,7 @@
             class="c-sidebar-nav-link"
             :href="route('admin.about.index')"
             :active="activeClass(Route::is('admin.about.index'), 'c-active text-warning font-weight-bold')"
-            icon="c-sidebar-nav-icon cil-info"
+            icon="c-sidebar-nav-icon fas fa-info"
             :text="__('About Us - Page')" />
         </li>
         <li class="c-sidebar-nav-item">
@@ -62,7 +62,7 @@
             class="c-sidebar-nav-link"
             :href="route('admin.approach.index')"
             :active="activeClass(Route::is('admin.approach.index'), 'c-active text-warning font-weight-bold')"
-            icon="c-sidebar-nav-icon cil-thumb-up"
+            icon="c-sidebar-nav-icon fas fa-thumbs-up"
             :text="__('Our Approach - Page')" />
         </li>
         <li class="c-sidebar-nav-dropdown {{ activeClass(Route::is('admin.team*'), 'c-open c-show') }}">
@@ -88,6 +88,48 @@
                     :active="activeClass(Route::is('admin.team.assist.index'), 'c-active text-warning font-weight-bold')"
                     icon="c-sidebar-nav-icon fas fa-user-friends"
                     :text="__('Training Assistant')" />
+                </li>
+            </ul>
+        </li>
+        <li class="c-sidebar-nav-dropdown {{ activeClass(Route::is('admin.exp*'), 'c-open c-show') }}">
+            <x-utils.link
+            href="#"
+            icon="c-sidebar-nav-icon fas fa-seedling"
+            class="c-sidebar-nav-dropdown-toggle"
+            :text="__('Our Experience - Page')" />
+            
+            <ul class="c-sidebar-nav-dropdown-items">
+                <li class="c-sidebar-nav-item ml-2">
+                    <x-utils.link
+                    class="c-sidebar-nav-link"
+                    :href="route('admin.exp.penelitian.index')"
+                    :active="activeClass(Route::is('admin.exp.penelitian.index'), 'c-active text-warning font-weight-bold')"
+                    icon="c-sidebar-nav-icon fas fa-vials"
+                    :text="__('Penelitian')" />
+                </li>
+                <li class="c-sidebar-nav-item ml-2">
+                    <x-utils.link
+                    class="c-sidebar-nav-link"
+                    :href="route('admin.exp.pendidikan.index')"
+                    :active="activeClass(Route::is('admin.exp.pendidikan.index'), 'c-active text-warning font-weight-bold')"
+                    icon="c-sidebar-nav-icon fas fa-graduation-cap"
+                    :text="__('Pendidikan & Pelatihan')" />
+                </li>
+                <li class="c-sidebar-nav-item ml-2">
+                    <x-utils.link
+                    class="c-sidebar-nav-link"
+                    :href="route('admin.exp.publikasi.index')"
+                    :active="activeClass(Route::is('admin.exp.publikasi.index'), 'c-active text-warning font-weight-bold')"
+                    icon="c-sidebar-nav-icon fas fa-book-open"
+                    :text="__('Publikasi')" />
+                </li>
+                <li class="c-sidebar-nav-item ml-2">
+                    <x-utils.link
+                    class="c-sidebar-nav-link"
+                    :href="route('admin.exp.partners.index')"
+                    :active="activeClass(Route::is('admin.exp.partners.index'), 'c-active text-warning font-weight-bold')"
+                    icon="c-sidebar-nav-icon fas fa-handshake"
+                    :text="__('Partners')" />
                 </li>
             </ul>
         </li>
