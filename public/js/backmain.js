@@ -38,7 +38,7 @@ $(function() { // Custom input type=file
 $(document).on('click', '.btn-edit', function(){
     var base_url = window.location.origin+window.location.pathname; 
     var id  = $(this).data('id');
-    console.log(base_url)
+    
     $.ajax({ // AJAX request
         headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
         url: base_url+'/edit',

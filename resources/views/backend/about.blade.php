@@ -232,8 +232,8 @@
                             <input id="title" class="form-control" type="text" name="title">
                         </div>
                         <div class="form-group">
-                            <label for="desc">Description</label>
-                            <textarea name="desc" id="desc" class="form-control descCK" required></textarea>
+                            <label for="descCK">Description</label>
+                            <textarea name="desc" id="descCK" class="form-control" required></textarea>
                         </div>
                         
                         <button type="submit" class="btn btn-success float-right"><i class="fas fa-paper-plane mr-2"></i>Submit</button>

@@ -181,4 +181,56 @@ $(function(){
             }
         });
     });
+    $('.lead-delete').on('click',function () {
+        var postId = $(this).data('id');        
+        Swal.fire({
+            title: "Delete Confirmation",
+            text: "Will you delete this lead with ID: "+postId+"?",
+            type: "error",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonClass: 'btn-sm btn-danger waves-effect waves-light',
+            cancelButtonText: "No",
+            confirmButtonText: "Yes, delete",
+            closeOnConfirm: true,
+            closeOnCancel: true,
+            allowOutsideClick: false
+        }).then((result) => {
+            if (result.value) {
+                window.location.href = "lead/delete/" + postId;
+                Swal.fire({
+                    text: "One lead has been deleted.",
+                    icon: 'success',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+        });
+    });
+    $('.assist-delete').on('click',function () {
+        var postId = $(this).data('id');        
+        Swal.fire({
+            title: "Delete Confirmation",
+            text: "Will you delete this assistant with ID: "+postId+"?",
+            type: "error",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonClass: 'btn-sm btn-danger waves-effect waves-light',
+            cancelButtonText: "No",
+            confirmButtonText: "Yes, delete",
+            closeOnConfirm: true,
+            closeOnCancel: true,
+            allowOutsideClick: false
+        }).then((result) => {
+            if (result.value) {
+                window.location.href = "assist/delete/" + postId;
+                Swal.fire({
+                    text: "One assistant has been deleted.",
+                    icon: 'success',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+        });
+    });
 });

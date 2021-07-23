@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\ApproachController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\FooterController;
 use App\Http\Controllers\Backend\HomepageController;
+use App\Http\Controllers\Backend\TeamController;
 use Tabuna\Breadcrumbs\Trail;
 
 // All route names are prefixed with 'admin.'.
@@ -120,6 +121,39 @@ Route::group(['as' => 'approach.'], function () {
         ->name('met-update');
         Route::get('approach/method/delete/{id}', [ApproachController::class, 'deleteMet'])
         ->name('met-delete');
+    });
+});
+
+Route::group(['as' => 'team.'], function () {
+    Route::group(['as' => 'lead.'], function () {
+        Route::get('team/lead', [TeamController::class, 'indexLead'])
+            ->name('index')
+            ->breadcrumbs(function (Trail $trail) {
+                $trail->push(__('Lead Researcher - Page'), route('admin.team.lead.index'));
+            });    
+        Route::post('team/lead/upload', [TeamController::class, 'uploadLead'])
+            ->name('lead-upload');
+        Route::post('team/lead/edit', [TeamController::class, 'editLead'])
+            ->name('lead-edit');
+        Route::put('team/lead/update/{id}', [TeamController::class, 'updateLead'])
+        ->name('lead-update');
+        Route::get('team/lead/delete/{id}', [TeamController::class, 'deleteLead'])
+        ->name('lead-delete');
+    });
+    Route::group(['as' => 'assist.'], function () {
+        Route::get('team/assist', [TeamController::class, 'indexAss'])
+            ->name('index')
+            ->breadcrumbs(function (Trail $trail) {
+                $trail->push(__('Research and Training Assistant - Page'), route('admin.team.assist.index'));
+            });    
+        Route::post('team/assist/upload', [TeamController::class, 'uploadAss'])
+            ->name('ass-upload');
+        Route::post('team/assist/edit', [TeamController::class, 'editAss'])
+            ->name('ass-edit');
+        Route::put('team/assist/update/{id}', [TeamController::class, 'updateAss'])
+        ->name('ass-update');
+        Route::get('team/assist/delete/{id}', [TeamController::class, 'deleteAss'])
+        ->name('ass-delete');
     });
 });
 

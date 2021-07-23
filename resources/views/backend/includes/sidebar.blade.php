@@ -65,6 +65,32 @@
             icon="c-sidebar-nav-icon cil-thumb-up"
             :text="__('Our Approach - Page')" />
         </li>
+        <li class="c-sidebar-nav-dropdown {{ activeClass(Route::is('admin.team*'), 'c-open c-show') }}">
+            <x-utils.link
+            href="#"
+            icon="c-sidebar-nav-icon fas fa-users"
+            class="c-sidebar-nav-dropdown-toggle"
+            :text="__('Our Team - Page')" />
+            
+            <ul class="c-sidebar-nav-dropdown-items">
+                <li class="c-sidebar-nav-item ml-2">
+                    <x-utils.link
+                    class="c-sidebar-nav-link"
+                    :href="route('admin.team.lead.index')"
+                    :active="activeClass(Route::is('admin.team.lead.index'), 'c-active text-warning font-weight-bold')"
+                    icon="c-sidebar-nav-icon fas fa-user-tie"
+                    :text="__('Lead Researcher')" />
+                </li>
+                <li class="c-sidebar-nav-item ml-2">
+                    <x-utils.link
+                    class="c-sidebar-nav-link"
+                    :href="route('admin.team.assist.index')"
+                    :active="activeClass(Route::is('admin.team.assist.index'), 'c-active text-warning font-weight-bold')"
+                    icon="c-sidebar-nav-icon fas fa-user-friends"
+                    :text="__('Training Assistant')" />
+                </li>
+            </ul>
+        </li>
         
         <li class="c-sidebar-nav-title">Advanced</li>
         <li class="c-sidebar-nav-item">
