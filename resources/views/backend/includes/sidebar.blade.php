@@ -133,6 +133,32 @@
                 </li>
             </ul>
         </li>
+        <li class="c-sidebar-nav-dropdown {{ activeClass(Route::is('admin.contact*'), 'c-open c-show') }}">
+            <x-utils.link
+            href="#"
+            icon="c-sidebar-nav-icon fas fa-comments"
+            class="c-sidebar-nav-dropdown-toggle"
+            :text="__('Contact Us')" />
+            
+            <ul class="c-sidebar-nav-dropdown-items">
+                <li class="c-sidebar-nav-item ml-2">
+                    <x-utils.link
+                    class="c-sidebar-nav-link"
+                    :href="route('admin.contact.msg-index')"
+                    :active="activeClass(Route::is('admin.contact.msg-index'), 'c-active text-warning font-weight-bold')"
+                    icon="c-sidebar-nav-icon fas fa-comment-dots"
+                    :text="__('Contact Messages')" />
+                </li>
+                <li class="c-sidebar-nav-item ml-2">
+                    <x-utils.link
+                    class="c-sidebar-nav-link"
+                    :href="route('admin.contact.pub-index')"
+                    :active="activeClass(Route::is('admin.contact.pub-index'), 'c-active text-warning font-weight-bold')"
+                    icon="c-sidebar-nav-icon fas fa-envelope-open"
+                    :text="__('Publication Request')" />
+                </li>
+            </ul>
+        </li>
         
         <li class="c-sidebar-nav-title">Advanced</li>
         <li class="c-sidebar-nav-item">

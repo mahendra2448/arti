@@ -337,4 +337,58 @@ $(function(){
             }
         });
     });
+    $('.message-delete').on('click',function () {
+        var postId = $(this).data('id');
+        var name = $(this).data('name');
+        Swal.fire({
+            title: "Delete Confirmation",
+            text: "Will you delete this message from "+name+"?",
+            type: "error",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonClass: 'btn-sm btn-danger waves-effect waves-light',
+            cancelButtonText: "No",
+            confirmButtonText: "Yes, delete",
+            closeOnConfirm: true,
+            closeOnCancel: true,
+            allowOutsideClick: false
+        }).then((result) => {
+            if (result.value) {
+                window.location.href = "messages/delete/" + postId;
+                Swal.fire({
+                    text: "One message has been deleted.",
+                    icon: 'success',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+        });
+    });
+    $('.pubreq-delete').on('click',function () {
+        var postId = $(this).data('id');
+        var email = $(this).data('email');
+        Swal.fire({
+            title: "Delete Confirmation",
+            text: "Will you delete this request from "+email+"?",
+            type: "error",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonClass: 'btn-sm btn-danger waves-effect waves-light',
+            cancelButtonText: "No",
+            confirmButtonText: "Yes, delete",
+            closeOnConfirm: true,
+            closeOnCancel: true,
+            allowOutsideClick: false
+        }).then((result) => {
+            if (result.value) {
+                window.location.href = "publication-request/delete/" + postId;
+                Swal.fire({
+                    text: "One request has been deleted.",
+                    icon: 'success',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+        });
+    });
 });

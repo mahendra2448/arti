@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\ApproachController;
+use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\ExperienceController;
 use App\Http\Controllers\Backend\FooterController;
@@ -208,7 +209,7 @@ Route::group(['as' => 'exp.'], function () {
         Route::get('exp/partners', [ExperienceController::class, 'indexPartner'])
             ->name('index')
             ->breadcrumbs(function (Trail $trail) {
-                $trail->push(__('partners'), route('admin.exp.partners.index'));
+                $trail->push(__('Partners'), route('admin.exp.partners.index'));
             });    
         Route::post('exp/partners/upload', [ExperienceController::class, 'uploadPartner'])
             ->name('partners-upload');
@@ -219,6 +220,25 @@ Route::group(['as' => 'exp.'], function () {
         Route::get('exp/partners/delete/{id}', [ExperienceController::class, 'deletePartner'])
         ->name('partners-delete');
     });
+});
+
+
+Route::group(['as' => 'contact.'], function () {
+    Route::get('contact/messages', [ContactController::class, 'indexMsg'])
+        ->name('msg-index')
+        ->breadcrumbs(function (Trail $trail) {
+            $trail->push(__('Contact Messages'), route('admin.contact.msg-index'));
+        });
+    Route::get('contact/messages/delete/{id}', [ContactController::class, 'deleteMsg'])
+    ->name('msg-delete');
+
+    Route::get('contact/publication-request', [ContactController::class, 'indexPub'])
+        ->name('pub-index')
+        ->breadcrumbs(function (Trail $trail) {
+            $trail->push(__('Publication Request'), route('admin.contact.pub-index'));
+        });
+    Route::get('contact/publication-request/delete/{id}', [ContactController::class, 'deletePub'])
+    ->name('pub-delete');
 });
 
 // Footer Section
