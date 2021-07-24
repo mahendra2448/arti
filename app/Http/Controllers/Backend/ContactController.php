@@ -10,7 +10,7 @@ use Yoeunes\Toastr\ToastrServiceProvider;
 
 class ContactController extends Controller {
     public function indexMsg() {
-        $message    = T_ContactMsgs::get();
+        $message    = T_ContactMsgs::orderby('id','DESC')->get();
         $rows       = [
             'message'  => $message
         ];
@@ -27,7 +27,7 @@ class ContactController extends Controller {
     }
 
     public function indexPub() {
-        $pubreq     = T_ContactPub::get();
+        $pubreq     = T_ContactPub::orderby('id','DESC')->get();
         $rows       = [
             'pubreq'  => $pubreq
         ];

@@ -3,12 +3,13 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Models\Frontend\Contact;
+use App\Models\T_ContactMsgs;
 use Illuminate\Http\Request;
 
 /**
  * Class HomeController.
  */
-class HomeController
+class FrontendController
 {
     /**
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
@@ -55,15 +56,14 @@ class HomeController
 
         // } else {
 
-            Contact::create([
+            T_ContactMsgs::create([
                 'name'      => $req->name,
                 'email'     => $req->email,
                 'message'   => $req->message
             ]);
     
-            toastr()->success('Thank you! <br> Your message has been submitted.');
-            // return redirect()->route('frontend.contact');
-            return redirect()->route('frontend.index');
+            toastr()->success('Thank you! <br> Your message has been sent.');
+            return redirect()->route('frontend.contact');
             
         // }
 
