@@ -22,7 +22,10 @@ class ContactController extends Controller {
     
         return redirect()->back();
     }
-    
+    public function readMsgStatus(Request $req) {
+        T_ContactMsgs::where('id',$req->id)->update(['read'=>1]);
+    }
+
     public function indexPub() {
         $pubreq     = T_ContactPub::get();
         $rows       = [
@@ -35,5 +38,8 @@ class ContactController extends Controller {
         T_ContactPub::where('id',$id)->forceDelete();  // hapus dari row db
     
         return redirect()->back();
+    }
+    public function readPubStatus(Request $req) {
+        T_ContactPub::where('id',$req->id)->update(['read'=>1]);
     }
 }

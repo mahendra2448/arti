@@ -84,3 +84,19 @@ function editFile(id) { // Custom input type=file // for edit
         };
     });
 }
+
+// change read status by AJAX
+$(document).on('click','a.mark-read', function(){
+    $(this).removeClass('btn-info')
+    $(this).addClass('btn-secondary disabled')
+    $(this).html('<i class="fas fa-envelope-open mr-1"></i> Read')
+    var id   = $(this).data('id');
+    $.ajax({ // AJAX request
+        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+        url: window.location.pathname+'/read-status',
+        type: 'POST',
+        data: {id: id},
+        success: function(response){}
+    });
+
+})

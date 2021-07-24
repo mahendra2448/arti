@@ -231,6 +231,8 @@ Route::group(['as' => 'contact.'], function () {
         });
     Route::get('contact/messages/delete/{id}', [ContactController::class, 'deleteMsg'])
     ->name('msg-delete');
+    Route::post('contact/messages/read-status', [ContactController::class, 'readMsgStatus'])
+        ->name('readmsg-status');
 
     Route::get('contact/publication-request', [ContactController::class, 'indexPub'])
         ->name('pub-index')
@@ -239,6 +241,8 @@ Route::group(['as' => 'contact.'], function () {
         });
     Route::get('contact/publication-request/delete/{id}', [ContactController::class, 'deletePub'])
     ->name('pub-delete');
+    Route::post('contact/publication-request/read-status', [ContactController::class, 'readPubStatus'])
+        ->name('readpub-status');
 });
 
 // Footer Section

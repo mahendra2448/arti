@@ -14,11 +14,11 @@
                         <div class="col-md-6">
                             <div class="alert alert-info" role="alert">
                                 <i class="fas fa-envelope mr-2"></i>
-                                <a href="#"><strong>XX pesan baru</strong> via Contact Us <em>—check it out!</em></a>
+                                <a href="{{route('admin.contact.msg-index')}}"><strong>{{$countMsg}} pesan baru</strong> via Contact Us <em>—check it out!</em></a>
                             </div>
                             <div class="alert alert-info" role="alert">
                                 <i class="fas fa-info-circle mr-2"></i>
-                                <a href="#"><strong>XX permintaan file Publikasi</strong> <em>—check it out!</em></a>
+                                <a href="{{route('admin.contact.pub-index')}}"><strong>{{$countPub}} permintaan file Publikasi</strong> <em>—check it out!</em></a>
                             </div>
                         </div>
                     </div>

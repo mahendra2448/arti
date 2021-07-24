@@ -26,13 +26,16 @@
         
                                 foreach($pubreq as $pr){
                                     $count  = $count + 1;
+                                    $readClass  = $pr->read==1 ? 'btn-secondary disabled' : 'btn-info';
+                                    $readStatus = $pr->read==1 ? 'Read' : 'Mark as read';
                             @endphp
                             <tr>
                                 <td style="vertical-align: middle;">@php echo $count; @endphp</td>
                                 <td style="vertical-align: middle;" class="user-select-all">{{$pr->email}}</td>
                                 <td style="vertical-align: middle;" class="user-select-all">{{$pr->title}}</td>
                                 <td class="text-center" style="vertical-align: middle;">
-                                    <a class="btn btn-sm btn-danger pubreq-delete" href="#" data-id="{{$pr->id}}" data-email="{{$pr->email}}"><i class="fas fa-trash mr-2"></i> Delete</a>
+                                    <a class="btn btn-sm {{$readClass}} mark-read" href="#" data-id="{{$pr->id}}"><i class="fas fa-envelope-open mr-1"></i> {{$readStatus}}</a>
+                                    <a class="btn btn-sm btn-danger pubreq-delete" href="#" data-id="{{$pr->id}}" data-email="{{$pr->email}}"><i class="fas fa-trash mr-1"></i> Delete</a>
                                 </td>
                             </tr>
                             @php
