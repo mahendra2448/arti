@@ -8,7 +8,8 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title"><i class="fas fa-comment-dots mr-2"></i> Contact Messages</h4>
+                <h4 class="card-title"><i class="fas fa-comment-dots mr-2"></i> Contact Messages
+                    <a href="{{route('admin.contact.msg-index')}}" class="float-right btn btn-sm btn-success"><i class="fas fa-sync mr-1"></i>Refresh</a></h4>
                 
                 <div class="table-responsive mt-3">
                     <table id="commonTable" class="table table-hover">                

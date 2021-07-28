@@ -17,7 +17,7 @@
     <div class="section about-us">
         <div class="container d-flex position-relative">
             <div class="img-custom"">
-                <img src="{{url('img/bg/bg-about.webp')}}" alt="Yayasan ARTI" class="ab-banner">
+                <img src="{{ $abt->abt_image }}" alt="Yayasan ARTI" class="ab-banner">
             </div>
             <div class="orn-pink-box"></div>
             <div class="row about-desc d-flex align-items-center">
@@ -25,7 +25,7 @@
                     <div class="when-small"></div>
                 </div>
                 <div class="col-md-7">
-                    <p><strong>Yayasan ARTI</strong> lahir dari kepedulian akademisi, pendidik, dan aktivis hak anak dan sosial untuk menciptakan kesadaran masyarakat tentang <strong>hak dan kesejahteraan anak dan kelompok marjinal</strong>, serta penghormatan terhadap martabat manusia. Kami hadir untuk membantu peningkatan kapasitas pada LSM, organisasi berbasis komunitas, dan lembaga lainnya.</p>
+                    <p>{!! $abt->abt_desc !!}</p>
                 </div>
             </div>
         </div>
@@ -36,11 +36,11 @@
                 <div class="col-md-6 vis-desc d-flex align-items-center">
                     <div class="wrapper">
                         <h1>Visi</h1>
-                        <p>Menjadi sebuah lembaga ahli dalam <strong>bidang penelitian aksi dan pelatihan</strong> yang menitikberatkan pada pendekatan partisipatif sebagai metode dalam membangun kesadaran masyarakat Indonesia terhadap <strong>hak-hak dan kesejahteraan anak</strong> juga penghormatan terhadap <strong>martabat manusia</strong>.</p>
+                        <p>{!! $abtvis->vis_desc !!}</p>
                     </div>
                 </div>
                 <div class="col-md-6 vis-img">
-                    <img src="{{url('img/bg/arti-kids-play.webp')}}" alt="anak-anak yayasan arti foundation" class="h-100 w-100">
+                    <img src="{{ $abtvis->vis_image }}" alt="anak-anak yayasan arti foundation" class="h-100 w-100">
                     <div class="orn-pink-circle"></div>
                 </div>
             </div>
@@ -50,16 +50,13 @@
         <div class="container">
             <div class="row d-flex">
                 <div class="col-md-6 miss-img">
-                    <img src="{{url('img/bg/arti-kids.webp')}}" alt="anak yayasan arti foundation" class="h-100 w-100">
+                    <img src="{{ $abtmis->mis_image }}" alt="anak yayasan arti foundation" class="h-100 w-100">
                     <div class="orn-pink-triangle"></div>
                 </div>
                 <div class="col-md-6 miss-desc d-flex align-items-center">
                     <div class="wrapper">
                         <h1>Misi</h1>
-                        <p>Secara berkesinambungan aktif dalam <strong>meningkatkan kapasitas</strong> lembaga dan kapasitas dalam diri individu <br><br>
-                        Melakukan penelitian tindakan maupun pelatihan, <strong>berdasarkan pemahaman akan konteks masalah dan komunitas</strong> <br><br>
-                        Membangun <strong>kepedulian</strong> yang senantiasa kritis dan <strong>mengembangkan keterampilan- keterampilan transformatif</strong> sebagai jalan untuk memperkuat komunitas <br><br>
-                        Mengusahakan terciptanya <strong>perubahan struktural</strong> dengan peningkatan kesadaran yang kritis pada komunitas- komunitas di Indonesia terhadap hak - hak anak dan martabat manusia</p>
+                        <p>{!! $abtmis->mis_desc !!}</p>
                     </div>
                 </div>
             </div>
@@ -76,14 +73,9 @@
                         </div>
                         <div class="col-9">
                             <ul>
-                                <li><strong>Persamaan</strong></li>
-                                <li><strong>Akuntabilitas</strong></li>
-                                <li><strong>Non-diskriminasi</strong></li>
-                                <li><strong>Professionalisme</strong></li>
-                                <li><strong>Kesetiaan</strong></li>
-                                <li><strong>Penghormatan</strong></li>
-                                <li><strong>Keadilan</strong></li>
-                                <li><strong>Keterbukaan</strong></li>
+                                @foreach ($prinsip as $pri)
+                                    <li><strong>{{$pri->name}}</strong></li>                                    
+                                @endforeach
                             </ul>
                         </div>
                     </div>
@@ -96,13 +88,9 @@
                         </div>
                         <div class="col-9">
                             <ul>
-                                <li><strong>Psikologi Sosial</strong></li>
-                                <li><strong>Kesehatan Mental</strong></li>
-                                <li><strong>Komunitas Marjinal</strong></li>
-                                <li><strong>Disabilitas</strong></li>
-                                <li><strong>Perlindungan Anak</strong></li>
-                                <li><strong>Anak dengan Situasi Krisis</strong></li>
-                                <li><strong>Penyalahgunaan Zat</strong></li>
+                                @foreach ($spesial as $spes)
+                                    <li><strong>{{$spes->name}}</strong></li>                                    
+                                @endforeach
                             </ul>
                         </div>
                     </div>
@@ -114,33 +102,21 @@
         <div class="container">
             <h1 class="text-center pb-5">Our Approach</h1>
             <div class="row">
-                <div class="col-md-6 py-3">
-                    <div class="row">
-                        <div class="col-4 col-md-3">
-                            <div class="orn-half-circle-pink d-flex align-items-center justify-content-center">
-                                <span>1</span>
+                @foreach ($approach as $appr)
+                    <div class="col-md-6 py-3">
+                        <div class="row">
+                            <div class="col-4 col-md-3">
+                                <div class="orn-half-circle-pink d-flex align-items-center justify-content-center">
+                                    <span>{{$loop->iteration}}</span>
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <h2>{{ $appr->title }}</h2>
+                                <p>{!! $appr->desc !!}</p>
                             </div>
                         </div>
-                        <div class="col-8">
-                            <h2>Penelitian</h2>
-                            <p>Penelitian kuantitatif dan kualitatif, dengan fokus pada pendekatan kualitatif. <br><br>
-                                Evaluasi dan metode-metode dalam penelitian aksi.</p>
-                        </div>
                     </div>
-                </div>
-                <div class="col-md-6 py-3">
-                    <div class="row">
-                        <div class="col-4 col-md-3">
-                            <div class="orn-half-circle-pink d-flex align-items-center justify-content-center">
-                                <span>2</span>
-                            </div>
-                        </div>
-                        <div class="col-8">
-                            <h2>Edukasi &  Pelatihan</h2>
-                            <p>Metode-metode pelatihan partisipatoris. <br><br> Pembelajaran eksperiensial.</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

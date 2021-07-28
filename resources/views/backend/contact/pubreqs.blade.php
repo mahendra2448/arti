@@ -8,7 +8,9 @@
     <div class="col-md-8">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title"><i class="fas fa-envelope mr-2"></i> Publication Requests</h4>
+                <h4 class="card-title"><i class="fas fa-envelope mr-2"></i> Publication Requests
+                    <a href="{{route('admin.contact.pub-index')}}" class="float-right btn btn-sm btn-success"><i class="fas fa-sync mr-1"></i>Refresh</a>
+                </h4>
                 
                 <div class="table-responsive mt-3">
                     <table id="commonTable" class="table table-hover">                

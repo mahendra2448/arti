@@ -185,7 +185,7 @@ class HomepageController extends Controller {
             $imagePath  = '/storage/kit/images/'.$imageName;
 
             try {
-                Image::make($req->image)->resize(1366, 768)->save($imageSave); // image resized to 1366*768px and saved
+                Image::make($req->image)->save($imageSave,70); // image reduced the quality to 70 from range 0-100
                 T_HomeExp::create([
                     'heading_text'  => $req->heading_text,
                     'image'         => $imagePath
@@ -250,7 +250,7 @@ class HomepageController extends Controller {
                     $imageName  = 'exp-'.date('dmYhis.').$req->image->extension();
                     $imageSave  = storage_path('app/public/kit/images/'.$imageName);
                     $imagePath  = '/storage/kit/images/'.$imageName;
-                    Image::make($req->image)->resize(1366, 768)->save($imageSave); // image resized to 1366*768px and saved
+                    Image::make($req->image)->save($imageSave,70); // image reduced the quality to 70 from range 0-100
                     
                     $old    = T_HomeExp::where('id',$req->id)->pluck('image');
                     File::delete(public_path($old[0])); // delete old image file

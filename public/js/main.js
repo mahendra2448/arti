@@ -95,7 +95,22 @@ $(function () {
 // request Publikasi's file
 $('.title a').on('click', function(){
     var fileTitle = $(this).data('title')
-    $('input#filename').val(fileTitle)
+    
+    $.ajax({ // AJAX request
+        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+        url: 'our-experiences/request',
+        type: 'POST',
+        data: {
+            title: fileTitle,
+            csrf: $('meta[name="csrf-token"]').attr('content')
+        },
+        beforeSend: function(){
+            $('#requestBody').append('<div class="text-center text-dark"><h3><i class="fas fa-spin fa-spinner ml-2"></i></h3></div>')
+        },
+        success: function(response){ 
+            $('#requestBody').html(response); // Add response in Modal body
+        }
+    });
 })
 // Carousel delay
 $('.carousel').carousel({
