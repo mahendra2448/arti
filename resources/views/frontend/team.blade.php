@@ -13,15 +13,13 @@
             </div>
         </div>
 
-        @php 
-            $count  = count($lead); 
-            $it     = [];
-            for ($i=0; $i<$count; $i++) {
-                array_push($it,$i);
+        @php
+            $iteTeam = [];
+            foreach ($lead as $tim) {
+                array_push($iteTeam,$tim);
             }
         @endphp
-        
-        <div class="section teamLead">
+        <div class="section teamLead"> //first row is different
             <div class="boxGrey gright"></div>
             <div class="container">
                 <div class="row">
@@ -29,17 +27,17 @@
                         <div class="boxTitle">
                             <h1>Lead <br>Researchers</h1>
                         </div>
-                    </div>
+                    </div>                    
                     <div class="col-md-6">
                         <div class="row py-4 teamPerson">
                             <div class="col-md-4 col-sm-12">
-                                <img src="{{$lead[0]->image}}" alt="{{$lead[0]->surname}}" class="rounded-circle w-auto">
+                                <img src="{{$first->image}}" alt="{{$first->surname}}" class="rounded-circle w-auto">
                                 <div class="name">
-                                    {{$lead[0]->name}}<span>({{$lead[0]->surname}})</span>
+                                    {{$first->name}}<span> ({{$first->surname}})</span>
                                 </div>
                             </div>
                             <div class="col-md-8 col-sm-12">
-                                <p>{{$lead[0]->desc}}</p>
+                                <p>{!!$first->desc!!}</p>
                             </div>
                         </div>
                     </div>
@@ -47,72 +45,30 @@
                 <div class="orn-half-circle-up-pink"></div>
             </div>
         </div>
+        @foreach ($iteTeam as $ite)
         <div class="section teamLead">
-            <div class="boxGrey gleft"></div>
+            <div class="boxGrey @if($loop->odd) gleft @else gright @endif"></div>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="row py-4 teamPerson">
-                            <div class="col-md-4 col-sm-12">
-                                <img src="{{$lead[1]->image}}" alt="{{$lead[1]->surname}}" class="rounded-circle w-auto">
-                                <div class="name">
-                                    {{$lead[1]->name}}<span>({{$lead[1]->surname}})</span>
+                    @foreach ($ite as $it)
+                        <div class="col-md-6">
+                            <div class="row py-4 teamPerson">
+                                <div class="col-md-4 col-sm-12">
+                                    <img src="{{$it->image}}" alt="{{$it->surname}}" class="rounded-circle w-auto">
+                                    <div class="name">
+                                        {{$it->name}}<span> ({{$it->surname}})</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-sm-12">
+                                    <p>{!!$it->desc!!}</p>
                                 </div>
                             </div>
-                            <div class="col-md-8 col-sm-12">
-                                <p>{{$lead[1]->desc}}</p>
-                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="row py-4 teamPerson">
-                            <div class="col-md-4 col-sm-12">
-                                <img src="{{$lead[2]->image}}" alt="{{$lead[2]->surname}}" class="rounded-circle w-auto">
-                                <div class="name">
-                                    {{$lead[2]->name}}<span>({{$lead[2]->surname}})</span>
-                                </div>
-                            </div>
-                            <div class="col-md-8 col-sm-12">
-                                <p>{{$lead[2]->desc}}</p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
-        </div>
-        <div class="section teamLead">
-            <div class="boxGrey gright"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="row py-4 teamPerson">
-                            <div class="col-md-4 col-sm-12">
-                                <img src="{{$lead[3]->image}}" alt="{{$lead[3]->surname}}" class="rounded-circle w-auto">
-                                <div class="name">
-                                    {{$lead[3]->name}}<span>({{$lead[3]->surname}})</span>
-                                </div>
-                            </div>
-                            <div class="col-md-8 col-sm-12">
-                                <p>{{$lead[3]->desc}}</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="row py-4 teamPerson">
-                            <div class="col-md-4 col-sm-12">
-                                <img src="{{$lead[4]->image}}" alt="{{$lead[4]->surname}}" class="rounded-circle w-auto">
-                                <div class="name">
-                                    {{$lead[4]->name}}<span>({{$lead[4]->surname}})</span>
-                                </div>
-                            </div>
-                            <div class="col-md-8 col-sm-12">
-                                <p>{{$lead[4]->desc}}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </div>            
+        @endforeach
         
         <div class="section trainingAssistant">
             <div class="orn-half-circle-down-pink"></div>

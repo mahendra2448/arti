@@ -41,7 +41,10 @@
                                 <td style="vertical-align: middle;">{{Str::limit($le->desc,200)}}</td>
                                 <td class="text-center" style="vertical-align: middle;">
                                     <a class="btn btn-sm btn-primary btn-edit" href="#" data-id="{{$le->id}}" data-toggle="modal" data-target="#editRow"><i class="fas fa-pen mr-2"></i>Edit</a>
+
+                                    @if($le->id==2) @continue @else
                                     <a class="btn btn-sm btn-danger lead-delete" href="#" data-id="{{$le->id}}"><i class="fas fa-trash mr-2"></i> Delete</a>
+                                    @endif
                                 </td>
                                 
                                 <!-- Modal Edit-->

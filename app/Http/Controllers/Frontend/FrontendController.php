@@ -84,11 +84,13 @@ class FrontendController
     }
 
     public function team() {
-        $team   = T_TeamLead::get();
+        $first  = T_TeamLead::first();
+        $team   = T_TeamLead::where('id','>',2)->get()->chunk(2);
         $assist = T_TeamAssist::get();  
         $foota  = T_Footer::first();
         $rows   = [
             'assist'    => $assist,
+            'first'     => $first,
             'lead'      => $team,
             'foota'     => $foota
         ];
