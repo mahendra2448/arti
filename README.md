@@ -8,7 +8,7 @@ This is the official website of [Yayasan ARTI](https://yayasanarti.com). YAYASAN
 ### Contact
 
 If you want to contact the foundation visit their website [here](https://yayasanarti.com/contact).
-If you want to make a website like this or any other needs, don't hesitate to mail me at [mahendrasyathi@gmail.com](mailto:mahendrasyathi@gmail.com). We can discuss
+If you want to make a website like this or any other needs, don't hesitate to mail me at [mahendrasyathi@gmail.com](mailto:mahendrasyathi@gmail.com). We can discuss about the features, your mobile-first or desktop-first need, or anything.
 
 ### Made with
 
