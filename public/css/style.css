@@ -226,6 +226,12 @@ body header .navbar .pg-experiences-nav {
   box-shadow: 0px 20px 40px 0px rgba(26, 26, 26, 0.7);
 }
 
+@media (max-width: 768px) {
+  body header .navbar .pg-experiences-nav {
+    display: none;
+  }
+}
+
 body header .navbar .pg-experiences-nav .sub-nav {
   display: -webkit-box;
   display: -ms-flexbox;
