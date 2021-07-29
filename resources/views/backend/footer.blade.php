@@ -24,11 +24,18 @@
                                 <input type="text" aria-describedby="address" name="address" class="form-control" value="{{$updates->address}}">
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <label for="email">Email</label>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend"><span class="input-group-text" id="email"><i class="fas fa-envelope"></i></span></div>
                                 <input type="email" aria-describedby="email" name="email" class="form-control" value="{{$updates->email}}">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="phone">Phone</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend"><span class="input-group-text" id="phone"><i class="fas fa-phone"></i></span></div>
+                                <input type="text" aria-describedby="phone" name="phone" class="form-control" value="{{$updates->phone}}">
                             </div>
                         </div>
                         <div class="col-md-6">

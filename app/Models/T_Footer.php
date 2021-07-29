@@ -14,6 +14,7 @@ class T_Footer extends Model
         'address',
         'email',
         'fb',
-        'ig'
+        'ig',
+        'phone'
     ];
 }

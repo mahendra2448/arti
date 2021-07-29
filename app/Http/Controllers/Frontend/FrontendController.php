@@ -153,7 +153,9 @@ class FrontendController
     
     //Contact Us 
     public function contact() {
-        return view('frontend.contact');
+        $foota      = T_Footer::first();
+
+        return view('frontend.contact', ['foota' => $foota]);
     }
     
     public function contactSubmit(Request $req) {

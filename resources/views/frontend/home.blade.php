@@ -58,7 +58,7 @@
             <div class="row row-cols-sm-1 row-cols-md-3 exp-thumbs">
                 @foreach ($expthumb as $exp)
                     <a href="{{route('frontend.experiences')}}" class="text-white">
-                        <figure class="effect-jazz blue">
+                        <figure class="effect-jazz @if($loop->odd) blue @else red @endif">
                             <img src="{{ $exp->image }}" alt="{{ $exp->heading_text }}">
                             <figcaption>
                                 <h2 class="m-auto">

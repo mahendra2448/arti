@@ -21,7 +21,8 @@ class FooterController extends Controller {
             'address'   => $req->address,
             'email'     => $req->email,
             'fb'        => $req->fb,
-            'ig'        => $req->ig
+            'ig'        => $req->ig,
+            'phone'     => $req->phone
         ]);
 
         toastr()->success('Footer updated.');

@@ -18,14 +18,14 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="medsos">
-                            <a href="#"><img src="{{url('img/iconified/ic-mail.png')}}" alt="Email Yayasan ARTI"></a>
-                            <a href="#"><img src="{{url('img/iconified/ic-fb.png')}}" alt="Facebook Yayasan ARTI"></a>
-                            <a href="#"><img src="{{url('img/iconified/ic-ig.png')}}" alt="Instagram Yayasan ARTI"></a>
+                            <a href="{{$foota->email}}"><img src="{{url('img/iconified/ic-mail.png')}}" alt="Email Yayasan ARTI"></a>
+                            <a href="{{$foota->fb}}"><img src="{{url('img/iconified/ic-fb.png')}}" alt="Facebook Yayasan ARTI"></a>
+                            <a href="{{$foota->ig}}"><img src="{{url('img/iconified/ic-ig.png')}}" alt="Instagram Yayasan ARTI"></a>
                         </div>
                         <div class="details">
-                            <a href="mailto:adminsupport@yayasanarti.com">adminsupport@yayasanarti.com</a><br>
-                            <a href="tel:0217360856">021 - 7360856</a>   <br>
-                            Jalan Kutilang Raya L7 no.14 Bintaro Raya - Sektor 2, Kota Tanggerang Selatan 15412
+                            <a href="mailto:{{$foota->email}}">{{$foota->email}}</a><br>
+                            <a href="tel:0217360856">{{$foota->phone}}</a><br>
+                            {!!$foota->address!!}
                             <p>
                             </p>
                             <div class="addon">
