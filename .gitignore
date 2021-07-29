@@ -4,6 +4,7 @@
 /public/storage
 /public/mix-manifest.json
 /storage/*.key
+/routes
 /vendor
 /.vscode
 *.sublime-project
